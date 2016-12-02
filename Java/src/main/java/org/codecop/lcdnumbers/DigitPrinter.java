@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  */
 public class DigitPrinter {
 
-    public static final String NEWLINE = "\n";
+    private static final String NEWLINE = "\n";
 
     public String render(List<Digit> digits) {
         List<Iterator<Line>> digitLines = digits.stream(). //
@@ -19,6 +19,8 @@ public class DigitPrinter {
 
         return renderLines(digitLines);
     }
+
+    // TODO extract generic zip of collections -> collaborator
 
     private String renderLines(List<Iterator<Line>> digitLines) {
         StringBuilder out = new StringBuilder();
