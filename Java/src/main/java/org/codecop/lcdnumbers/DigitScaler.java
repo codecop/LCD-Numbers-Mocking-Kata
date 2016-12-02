@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
  * Scales x and y of digit lines.
  */
 public class DigitScaler {
+
     public List<Digit> scale(List<Digit> digits, int size) {
         return digits. //
                 stream(). //
@@ -33,7 +34,6 @@ public class DigitScaler {
             }
             second = !second;
         }
-
 
         return digit.scale(scaled);
     }

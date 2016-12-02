@@ -6,6 +6,7 @@ import java.util.List;
  * Combines Converter, Scaler and Printer.
  */
 public class LcdDisplay {
+
     private final DigitsSplitter digitsSplitter;
     private final DigitScaler digitScaler;
     private final DigitPrinter digitPrinter;

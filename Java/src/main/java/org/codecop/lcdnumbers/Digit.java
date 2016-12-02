@@ -6,6 +6,7 @@ import java.util.List;
  * Value Object of an LCD digit.
  */
 public class Digit {
+
     private final int digit;
     private final List<Line> lines;
 
@@ -18,8 +19,12 @@ public class Digit {
         this.lines = lines;
     }
 
-    public List<Line> lines() {
+    List<Line> lines() {
         return lines;
+    }
+
+    Digit scale(List<Line> scaledLines) {
+        return new Digit(digit, scaledLines);
     }
 
     @Override
@@ -36,7 +41,4 @@ public class Digit {
         return digit;
     }
 
-    public Digit scale(List<Line> scaledLines) {
-        return new Digit(digit, scaledLines);
-    }
 }
