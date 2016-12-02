@@ -1,5 +1,8 @@
-package kata.lcdnumbers.a20160910;
+package org.codecop.lcdnumbers;
 
+import org.codecop.lcdnumbers.Digit;
+import org.codecop.lcdnumbers.Line;
+import org.codecop.lcdnumbers.Patterns;
 import org.junit.Test;
 
 import java.util.Arrays;

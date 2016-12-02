@@ -1,11 +1,11 @@
-package kata.lcdnumbers.a20160910;
+package org.codecop.lcdnumbers;
 
+import org.codecop.lcdnumbers.Digit;
+import org.codecop.lcdnumbers.DigitPrinter;
+import org.codecop.lcdnumbers.DigitScaler;
+import org.codecop.lcdnumbers.DigitsSplitter;
+import org.codecop.lcdnumbers.LcdDisplay;
 import org.junit.Test;
-
-import kata.lcdnumbers.a20160910.DigitPrinter;
-import kata.lcdnumbers.a20160910.DigitScaler;
-import kata.lcdnumbers.a20160910.DigitsSplitter;
-import kata.lcdnumbers.a20160910.LcdDisplay;
 
 import java.util.Collections;
 import java.util.List;

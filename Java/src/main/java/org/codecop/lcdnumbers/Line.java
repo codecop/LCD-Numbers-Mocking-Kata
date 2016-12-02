@@ -1,4 +1,4 @@
-package kata.lcdnumbers.a20160910;
+package org.codecop.lcdnumbers;
 
 /**
  * Value Object of an LCD digit line.

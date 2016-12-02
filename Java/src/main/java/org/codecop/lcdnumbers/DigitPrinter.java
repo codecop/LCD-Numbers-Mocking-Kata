@@ -1,4 +1,4 @@
-package kata.lcdnumbers.a20160910;
+package org.codecop.lcdnumbers;
 
 import java.util.Iterator;
 import java.util.List;
