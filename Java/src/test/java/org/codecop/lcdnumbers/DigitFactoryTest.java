@@ -1,11 +1,12 @@
-package kata.lcdnumbers.a20160910;
+package org.codecop.lcdnumbers;
 
 import org.junit.Test;
 
-import kata.lcdnumbers.a20160910.DigitFactory;
-import kata.lcdnumbers.a20160910.Patterns;
-
 import static org.junit.Assert.assertEquals;
+
+import org.codecop.lcdnumbers.Digit;
+import org.codecop.lcdnumbers.DigitFactory;
+import org.codecop.lcdnumbers.Patterns;
 
 public class DigitFactoryTest {
     @Test

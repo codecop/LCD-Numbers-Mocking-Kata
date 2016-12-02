@@ -1,15 +1,15 @@
-package kata.lcdnumbers.a20160910;
+package org.codecop.lcdnumbers;
 
 import org.junit.Test;
 
-import kata.lcdnumbers.a20160910.DigitFactory;
-import kata.lcdnumbers.a20160910.DigitPrinter;
-import kata.lcdnumbers.a20160910.DigitScaler;
-import kata.lcdnumbers.a20160910.DigitsSplitter;
-import kata.lcdnumbers.a20160910.LcdDisplay;
-import kata.lcdnumbers.a20160910.Patterns;
-
 import static org.junit.Assert.assertEquals;
+
+import org.codecop.lcdnumbers.DigitFactory;
+import org.codecop.lcdnumbers.DigitPrinter;
+import org.codecop.lcdnumbers.DigitScaler;
+import org.codecop.lcdnumbers.DigitsSplitter;
+import org.codecop.lcdnumbers.LcdDisplay;
+import org.codecop.lcdnumbers.Patterns;
 
 public class GuidingTest {
 
