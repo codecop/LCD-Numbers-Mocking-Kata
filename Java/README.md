@@ -15,14 +15,14 @@ The `LcdDisplay` createy an LCD string representation of an integer value using 
 
 ● Each digit is shown below:
 
-   --      --  --      --  --  --  --  -- 
-  |  |   |   |   ||  ||   |      ||  ||  |
-  |  |   |   |   ||  ||   |      ||  ||  |
-           --  --  --  --  --      --  -- 
-  |  |   ||      |   |   ||  |   ||  |   |
-  |  |   ||      |   |   ||  |   ||  |   |
-   --      --  --      --  --      --  -- 
-  
+     --      --  --      --  --  --  --  -- 
+    |  |   |   |   ||  ||   |      ||  ||  |
+    |  |   |   |   ||  ||   |      ||  ||  |
+             --  --  --  --  --      --  -- 
+    |  |   ||      |   |   ||  |   ||  |   |
+    |  |   ||      |   |   ||  |   ||  |   |
+     --      --  --      --  --      --  -- 
+
 ● The bar size should be adjustable. The default value is 2 - as shown above.
 
 ## Description of Classes ##
