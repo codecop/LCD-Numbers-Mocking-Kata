@@ -53,9 +53,9 @@ To measure your progress you can use code coverage tools
 
 * EclEmma inside of Eclipse. 
 
-* [Cobertura](http://cobertura github io/cobertura/) `mvnw cobertura:cobertura`.
+* [Cobertura](http://cobertura.github.io/cobertura/) `mvnw cobertura:cobertura`.
 
-* [PIT](http://pitest org/) `mvnw test-compile org pitest:pitest-maven:mutationCoverage`.
+* [PIT](http://pitest.org/) `mvnw test-compile org pitest:pitest-maven:mutationCoverage`.
   PIT does not work if there are blanks in any path names leading to the current location.
 
 ### License ###
