@@ -1,0 +1,25 @@
+package kata.lcdnumbers.a20160910;
+
+import java.util.List;
+
+/**
+ * Combines Converter, Scaler and Printer.
+ */
+public class LcdDisplay {
+    private final DigitsSplitter digitsSplitter;
+    private final DigitScaler digitScaler;
+    private final DigitPrinter digitPrinter;
+
+    public LcdDisplay(DigitsSplitter digitsSplitter, DigitScaler digitScaler, DigitPrinter digitPrinter) {
+        this.digitsSplitter = digitsSplitter;
+        this.digitScaler = digitScaler;
+        this.digitPrinter = digitPrinter;
+    }
+
+    public String toLcd(int number, int size) {
+        List<Digit> digits = digitsSplitter.convert(number);
+        List<Digit> scaled = digitScaler.scale(digits, size);
+        return digitPrinter.render(scaled);
+    }
+
+}
