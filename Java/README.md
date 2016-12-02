@@ -51,12 +51,12 @@ There are sample LCD outputs in the `src/test/resources` folder.
 
 To measure your progress you can use code coverage tools 
 
-* EclEmma inside of Eclipse. 
+* EclEmma inside of Eclipse.
 
-* [Cobertura](http://cobertura.github.io/cobertura/) `mvnw cobertura:cobertura`.
+* [Cobertura](http://cobertura.github.io/cobertura/) - type `mvnw cobertura:cobertura`.
 
-* [PIT](http://pitest.org/) `mvnw test-compile org pitest:pitest-maven:mutationCoverage`.
-  PIT does not work if there are blanks in any path names leading to the current location.
+* [PIT](http://pitest.org/) - type `mvnw test-compile org pitest:pitest-maven:mutationCoverage`.
+  Note that PIT does not work if there are any blanks in the path names leading to the current location.
 
 ### License ###
 This work is licensed under a [New BSD License](http://opensource.org/licenses/bsd-license.php), see `license txt` in repository.
