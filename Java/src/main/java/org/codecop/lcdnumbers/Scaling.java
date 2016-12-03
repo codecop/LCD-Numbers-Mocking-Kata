@@ -28,7 +28,11 @@ public class Scaling {
         return times == 1;
     }
 
-    public void repeat(Runnable block) {
+    public CharRepeater repeater() {
+        return new CharRepeater(times);
+    }
+
+    public void additional(Runnable block) {
         Objects.requireNonNull(block);
 
         for (int i = 1; i < times; i++) {
