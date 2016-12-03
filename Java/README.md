@@ -10,7 +10,7 @@ are provided as dependencies.
 
 ## Description of Requirements ##
 
-The `LcdDisplay` createy an LCD string representation of an integer value using a
+The `LcdDisplay` creates an LCD string representation of an integer value using a
 4x7 grid of space, using minus and pipe characters for each digit.
 
 ● Each digit is shown below:
@@ -27,20 +27,13 @@ The `LcdDisplay` createy an LCD string representation of an integer value using 
 
 ## Description of Classes ##
 
-TODO describe code or paste API doc
-
-+ LcdDisplay
-| first test only uses DigitConverter and Digit's toString
-| but String composition is not line wise
-| write first test again
-|- + DigitsConverter
-   |- + DigitFactory
-      |- + Patterns
-
-|- + DigitsPrinter
-   | the direct print ended in getting lines of the digit, which is mocked 
-   | again logic pushed out   
-   |- + Digit/Patterns/Line
+To make things easier for you, here is the description of the solution used in the code:
+The `LcdDisplay` is the entry point. The given number is split into digits according to the 
+used `NumeralSystem` (which is the Decimal System). Then the initial `Digit`s are 
+created by copying the template `Line`s from `Patterns`. Then the (LCD) digits scaled 
+according to the `Scaling` value (by `DigitScaler`). The actual scaling is done by
+the `ScalingRepeater` by repeating certain rows and columns of the template. Finally 
+the list of digits is combined to a single String by the `DigitPrinter`.
 
 ## Assignment ##
 
