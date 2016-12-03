@@ -9,7 +9,7 @@ public class Main {
         final LcdDisplay lcdDisplay = new LcdDisplay( //
                 new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
                 new DigitScaler(new ScalingRepeater()), //
-                new DigitPrinter());
+                new DigitPrinter(new Zipper()));
 
         int number = Integer.parseInt(args[0]);
         Scaling scaling = Scaling.of(Integer.parseInt(args[1]));

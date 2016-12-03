@@ -24,7 +24,7 @@ public class GuidingTest {
     private final LcdDisplay lcdDisplay = new LcdDisplay( //
             new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
             new DigitScaler(new ScalingRepeater()), //
-            new DigitPrinter());
+            new DigitPrinter(new Zipper()));
 
     @Test
     public void shouldPrintLcdSizeOne() {
@@ -74,7 +74,7 @@ public class GuidingTest {
         Path fileSystemResource = Paths.get(classpathResource.toURI());
         return Files.readAllLines(fileSystemResource). //
                 stream(). //
-                collect(Collectors.joining("\n")) + "\n";
+                collect(Collectors.joining("\n", "", "\n"));
     }
     
 }
