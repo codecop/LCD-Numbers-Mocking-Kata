@@ -14,7 +14,7 @@ public class ScalingRepeater {
         Objects.requireNonNull(scaling);
 
         List<T> elements = new ArrayList<>();
-        scaling.additional(() -> elements.add(element));
+        scaling.times(() -> elements.add(element));
         return elements;
     }
 
@@ -22,8 +22,7 @@ public class ScalingRepeater {
         Objects.requireNonNull(scaling);
 
         StringBuilder acc = new StringBuilder();
-        acc.append(aChar);
-        scaling.additional(() -> acc.append(aChar));
+        scaling.times(() -> acc.append(aChar));
         return acc.toString();
     }
 

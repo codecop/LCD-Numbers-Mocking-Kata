@@ -1,17 +1,14 @@
 package org.codecop.lcdnumbers;
 
-import org.codecop.lcdnumbers.Digit;
-import org.codecop.lcdnumbers.DigitScaler;
-import org.codecop.lcdnumbers.Line;
-import org.codecop.lcdnumbers.Patterns;
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Collections;
-
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.junit.Test;
 
 public class DigitScalerTest {
 
@@ -23,9 +20,9 @@ public class DigitScalerTest {
         when(patterns.of(1)).thenReturn(Collections.singletonList(new Line(" - ")));
         Digit digit = new Digit(1, patterns);
 
-        Digit scaled = digitScaler.scale(digit, Scaling.TWO);
+        List<Digit> scaled = digitScaler.scale(Arrays.asList(digit), Scaling.TWO);
 
-        assertEquals(Collections.singletonList(new Line(" -- ")), scaled.lines());
+        assertEquals(Collections.singletonList(new Line(" -- ")), scaled.get(0).lines());
     }
 
     @Test
@@ -34,9 +31,9 @@ public class DigitScalerTest {
         when(patterns.of(1)).thenReturn(Arrays.asList(new Line(" - "), new Line("  |"), new Line(" - ")));
         Digit digit = new Digit(1, patterns);
 
-        Digit scaled = digitScaler.scale(digit, Scaling.TWO);
+        List<Digit> scaled = digitScaler.scale(Arrays.asList(digit), Scaling.TWO);
 
-        assertEquals(Arrays.asList(new Line(" -- "), new Line("   |"), new Line("   |"), new Line(" -- ")), scaled.lines());
+        assertEquals(Arrays.asList(new Line(" -- "), new Line("   |"), new Line("   |"), new Line(" -- ")), scaled.get(0).lines());
     }
 
     @Test
@@ -45,8 +42,8 @@ public class DigitScalerTest {
         when(patterns.of(1)).thenReturn(Arrays.asList(new Line(" - "), new Line("  |"), new Line(" - ")));
         Digit digit = new Digit(1, patterns);
 
-        Digit scaled = digitScaler.scale(digit, Scaling.NONE);
+        List<Digit> scaled = digitScaler.scale(Arrays.asList(digit), Scaling.NONE);
 
-        assertEquals(Arrays.asList(new Line(" - "), new Line("  |"), new Line(" - ")), scaled.lines());
+        assertEquals(Arrays.asList(new Line(" - "), new Line("  |"), new Line(" - ")), scaled.get(0).lines());
     }
 }

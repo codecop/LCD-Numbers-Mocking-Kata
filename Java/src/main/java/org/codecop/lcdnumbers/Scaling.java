@@ -28,10 +28,10 @@ public class Scaling {
         return times == 1;
     }
 
-    public void additional(Runnable block) {
+    public void times(Runnable block) {
         Objects.requireNonNull(block);
 
-        for (int i = 1; i < times; i++) {
+        for (int i = 0; i < times; i++) {
             block.run();
         }
     }
