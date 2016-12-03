@@ -1,6 +1,7 @@
 package org.codecop.lcdnumbers;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,13 +70,16 @@ public class Patterns {
         if (lcdByDigit.containsKey(digit)) {
             throw new IllegalArgumentException("duplicate pattern definition for digit " + digit);
         }
-        lcdByDigit.put(digit, Arrays.asList(lines));
+        
+        List<Line> listOfLines = Collections.unmodifiableList(Arrays.asList(lines));
+        lcdByDigit.put(digit, listOfLines);
     }
 
     public List<Line> of(int digit) {
         if (!lcdByDigit.containsKey(digit)) {
             throw new IllegalArgumentException("no pattern defined for digit " + digit);
         }
+        
         return lcdByDigit.get(digit);
     }
 }
