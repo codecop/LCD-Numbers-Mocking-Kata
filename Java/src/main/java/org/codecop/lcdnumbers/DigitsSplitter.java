@@ -24,7 +24,7 @@ public class DigitsSplitter {
         List<Integer> numeralDigits = numeralSystem.digitsOf(number);
 
         return numeralDigits.stream(). //
-                map(digitFactory::create). // 
+                map(digitFactory::create). //
                 collect(Collectors.toList());
     }
 }
