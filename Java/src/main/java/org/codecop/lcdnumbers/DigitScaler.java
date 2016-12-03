@@ -10,6 +10,12 @@ import java.util.stream.Collectors;
  */
 public class DigitScaler {
 
+    private final ScalingRepeater repeater;
+
+    public DigitScaler(ScalingRepeater repeater) {
+        this.repeater = repeater;
+    }
+
     public List<Digit> scale(List<Digit> digits, Scaling scaling) {
         Objects.requireNonNull(digits);
         Objects.requireNonNull(scaling);
@@ -30,10 +36,10 @@ public class DigitScaler {
 
         boolean second = false;
         for (Line line : digit.lines()) {
-            Line scaledLine = line.scaleHorizontal(scaling.repeater());
+            Line scaledLine = line.scaleHorizontal(repeater, scaling);
             scaled.add(scaledLine);
             if (second) {
-                scaling.additional(() -> scaled.add(scaledLine));
+                scaled.addAll(repeater.repeat(scaledLine, scaling));
             }
             second = !second;
         }

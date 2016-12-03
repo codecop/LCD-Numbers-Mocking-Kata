@@ -15,11 +15,12 @@ public class Line {
         this.line = line;
     }
 
-    public Line scaleHorizontal(CharRepeater repeater) {
+    public Line scaleHorizontal(ScalingRepeater repeater, Scaling scaling) {
         Objects.requireNonNull(repeater);
+        Objects.requireNonNull(scaling);
 
         char[] chars = line.toCharArray();
-        return new Line(chars[0] + repeater.repeat(chars[1]) + chars[2]);
+        return new Line(chars[0] + repeater.repeat(chars[1], scaling) + chars[2]);
     }
 
     @Override
