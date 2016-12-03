@@ -30,10 +30,10 @@ public class DigitScaler {
 
         boolean second = false;
         for (Line line : digit.lines()) {
-            Line scaledLine = line.scaleHorizontal(scaling);
+            Line scaledLine = line.scaleHorizontal(scaling.repeater());
             scaled.add(scaledLine);
             if (second) {
-                scaling.repeat(() -> scaled.add(scaledLine));
+                scaling.additional(() -> scaled.add(scaledLine));
             }
             second = !second;
         }

@@ -15,27 +15,18 @@ public class Line {
         this.line = line;
     }
 
-    public Line scaleHorizontal(Scaling scaling) {
-        if (scaling.none()) {
-            return this;
-        }
+    public Line scaleHorizontal(CharRepeater repeater) {
+        Objects.requireNonNull(repeater);
 
         char[] chars = line.toCharArray();
-        return new Line("" + chars[0] + repeat(chars[1], scaling) + chars[2]);
-    }
-
-    // TODO this is another collaborator
-    private String repeat(char aChar, Scaling scaling) {
-        StringBuilder acc = new StringBuilder();
-        acc.append(aChar);
-        scaling.repeat(() -> acc.append(aChar));
-        return acc.toString();
+        return new Line(chars[0] + repeater.repeat(chars[1]) + chars[2]);
     }
 
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof Line))
+        if (!(other instanceof Line)) {
             return false;
+        }
         Line that = (Line) other;
         return this.line.equals(that.line);
     }
