@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 
 public class DigitScalerTest {
 
-    private final DigitScaler digitScaler = new DigitScaler();
+    private final DigitScaler digitScaler = new DigitScaler(new ScalingRepeater());
 
     @Test
     public void shouldScaleHorizontal() {

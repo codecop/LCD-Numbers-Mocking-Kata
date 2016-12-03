@@ -28,10 +28,6 @@ public class Scaling {
         return times == 1;
     }
 
-    public CharRepeater repeater() {
-        return new CharRepeater(times);
-    }
-
     public void additional(Runnable block) {
         Objects.requireNonNull(block);
 

@@ -23,7 +23,7 @@ public class GuidingTest {
 
     private final LcdDisplay lcdDisplay = new LcdDisplay( //
             new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
-            new DigitScaler(),
+            new DigitScaler(new ScalingRepeater()),
             new DigitPrinter());
 
     @Test
