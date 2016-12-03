@@ -23,7 +23,7 @@ public class DigitScalerTest {
         when(patterns.of(1)).thenReturn(Collections.singletonList(new Line(" - ")));
         Digit digit = new Digit(1, patterns);
 
-        Digit scaled = digitScaler.scale(digit, 2);
+        Digit scaled = digitScaler.scale(digit, Scaling.TWO);
 
         assertEquals(Collections.singletonList(new Line(" -- ")), scaled.lines());
     }
@@ -34,7 +34,7 @@ public class DigitScalerTest {
         when(patterns.of(1)).thenReturn(Arrays.asList(new Line(" - "), new Line("  |"), new Line(" - ")));
         Digit digit = new Digit(1, patterns);
 
-        Digit scaled = digitScaler.scale(digit, 2);
+        Digit scaled = digitScaler.scale(digit, Scaling.TWO);
 
         assertEquals(Arrays.asList(new Line(" -- "), new Line("   |"), new Line("   |"), new Line(" -- ")), scaled.lines());
     }
@@ -45,7 +45,7 @@ public class DigitScalerTest {
         when(patterns.of(1)).thenReturn(Arrays.asList(new Line(" - "), new Line("  |"), new Line(" - ")));
         Digit digit = new Digit(1, patterns);
 
-        Digit scaled = digitScaler.scale(digit, 1);
+        Digit scaled = digitScaler.scale(digit, Scaling.NONE);
 
         assertEquals(Arrays.asList(new Line(" - "), new Line("  |"), new Line(" - ")), scaled.lines());
     }
