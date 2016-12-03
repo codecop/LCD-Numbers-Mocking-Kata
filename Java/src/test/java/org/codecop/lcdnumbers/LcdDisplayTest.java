@@ -25,7 +25,7 @@ public class LcdDisplayTest {
         when(digitsSplitter.convert(1)).thenReturn(digits);
 
         DigitScaler digitScaler = mock(DigitScaler.class);
-        when(digitScaler.scale(digits, 1)).thenReturn(digits);
+        when(digitScaler.scale(digits, Scaling.NONE)).thenReturn(digits);
 
         DigitPrinter digitPrinter = mock(DigitPrinter.class);
         String lcdTextOfDigit1 = "irrelevant";
@@ -33,6 +33,6 @@ public class LcdDisplayTest {
 
         LcdDisplay lcdDisplay = new LcdDisplay(digitsSplitter, digitScaler, digitPrinter);
 
-        assertEquals(lcdTextOfDigit1, lcdDisplay.toLcd(1, 1));
+        assertEquals(lcdTextOfDigit1, lcdDisplay.toLcd(1, Scaling.NONE));
     }
 }

@@ -28,7 +28,7 @@ public class GuidingTest {
 
     @Test
     public void shouldPrintLcdSizeOne() {
-        String lcd = lcdDisplay.toLcd(123, 1);
+        String lcd = lcdDisplay.toLcd(123, Scaling.NONE);
         assertEquals("    -  - \n" + //
                      "  |  |  |\n" + //
                      "    -  - \n" + //
@@ -38,7 +38,7 @@ public class GuidingTest {
 
     @Test
     public void shouldPrintLcdSizeTwo() {
-        String lcd = lcdDisplay.toLcd(123, 2);
+        String lcd = lcdDisplay.toLcd(123, Scaling.TWO);
         assertEquals("     --  -- \n" + //
                      "   |   |   |\n" + //
                      "   |   |   |\n" + //
@@ -50,7 +50,7 @@ public class GuidingTest {
 
     @Test
     public void shouldPrintLcdSizeThree() {
-        String lcd = lcdDisplay.toLcd(123, 3);
+        String lcd = lcdDisplay.toLcd(123, Scaling.of(3));
         assertEquals("      ---  --- \n" + //
                      "    |    |    |\n" + //
                      "    |    |    |\n" + //
@@ -64,7 +64,7 @@ public class GuidingTest {
 
     @Test
     public void shouldPrintAllNumbersLcdSizeThree() throws IOException, URISyntaxException {
-        String lcd = lcdDisplay.toLcd(1234567890, 3);
+        String lcd = lcdDisplay.toLcd(1234567890, Scaling.of(3));
         String expected = read("/numbers grid 5x9 - size 3.txt");
         assertEquals(expected, lcd);
     }

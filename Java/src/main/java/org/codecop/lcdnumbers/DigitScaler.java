@@ -10,23 +10,19 @@ import java.util.stream.Collectors;
  */
 public class DigitScaler {
 
-    public List<Digit> scale(List<Digit> digits, int times) {
+    public List<Digit> scale(List<Digit> digits, Scaling scaling) {
         Objects.requireNonNull(digits);
-        if (times <= 0) {
-            throw new IllegalArgumentException("scaling factor must be >= 1");
-        }
+        Objects.requireNonNull(scaling);
 
         return digits.stream(). //
-                map(d -> scale(d, times)). //
+                map(d -> scale(d, scaling)). //
                 collect(Collectors.toList());
     }
 
-    public Digit scale(Digit digit, int times) {
+    public Digit scale(Digit digit, Scaling scaling) {
         Objects.requireNonNull(digit);
-        if (times <= 0) {
-            throw new IllegalArgumentException("scaling factor must be >= 1");
-        }
-        if (times == 1) {
+        Objects.requireNonNull(scaling);
+        if (scaling.none()) {
             return digit;
         }
 
@@ -34,12 +30,10 @@ public class DigitScaler {
 
         boolean second = false;
         for (Line line : digit.lines()) {
-            Line scaledLine = line.scaleHorizontal(times);
+            Line scaledLine = line.scaleHorizontal(scaling);
             scaled.add(scaledLine);
             if (second) {
-                for (int i = 1; i < times; i++) {
-                    scaled.add(scaledLine);
-                }
+                scaling.repeat(() -> scaled.add(scaledLine));
             }
             second = !second;
         }

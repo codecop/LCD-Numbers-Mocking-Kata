@@ -15,24 +15,20 @@ public class Line {
         this.line = line;
     }
 
-    public Line scaleHorizontal(int times) {
-        if (times <= 0) {
-            throw new IllegalArgumentException("scaling factor must be >= 1");
-        }
-        if (times == 1) {
+    public Line scaleHorizontal(Scaling scaling) {
+        if (scaling.none()) {
             return this;
         }
 
         char[] chars = line.toCharArray();
-        return new Line("" + chars[0] + repeat(chars[1], times) + chars[2]);
+        return new Line("" + chars[0] + repeat(chars[1], scaling) + chars[2]);
     }
 
     // TODO this is another collaborator
-    private String repeat(char aChar, int size) {
+    private String repeat(char aChar, Scaling scaling) {
         StringBuilder acc = new StringBuilder();
-        for (int i = 0; i < size; i++) {
-            acc.append(aChar);
-        }
+        acc.append(aChar);
+        scaling.repeat(() -> acc.append(aChar));
         return acc.toString();
     }
 
