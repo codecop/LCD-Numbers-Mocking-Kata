@@ -66,10 +66,16 @@ public class Patterns {
     }
 
     private void put(int digit, Line... lines) {
+        if (lcdByDigit.containsKey(digit)) {
+            throw new IllegalArgumentException("duplicate pattern definition for digit " + digit);
+        }
         lcdByDigit.put(digit, Arrays.asList(lines));
     }
 
     public List<Line> of(int digit) {
+        if (!lcdByDigit.containsKey(digit)) {
+            throw new IllegalArgumentException("no pattern defined for digit " + digit);
+        }
         return lcdByDigit.get(digit);
     }
 }
