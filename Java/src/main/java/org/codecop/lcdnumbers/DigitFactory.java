@@ -11,7 +11,7 @@ public class DigitFactory {
 
     public DigitFactory(Patterns patterns) {
         Objects.requireNonNull(patterns);
-        
+
         this.patterns = patterns;
     }
 

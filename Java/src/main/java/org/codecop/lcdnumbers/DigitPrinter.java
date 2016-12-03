@@ -14,7 +14,7 @@ public class DigitPrinter {
 
     public String render(List<Digit> digits) {
         Objects.requireNonNull(digits);
-        
+
         List<Iterator<Line>> digitLines = digits.stream(). //
                 map(Digit::lines). //
                 map(Iterable::iterator). //
