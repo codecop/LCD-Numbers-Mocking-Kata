@@ -1,31 +1,30 @@
 package org.codecop.lcdnumbers;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
- * Splits into digits.
+ * Splits into digits and converts digits to LCD digits.
  */
 public class DigitsSplitter {
 
-    private final int base = 10;
+    private final NumeralSystem numeralSystem;
     private final DigitFactory digitFactory;
 
-    public DigitsSplitter(DigitFactory digitFactory) {
+    public DigitsSplitter(NumeralSystem numeralSystem, DigitFactory digitFactory) {
+        Objects.requireNonNull(numeralSystem);
+        Objects.requireNonNull(digitFactory);
+
+        this.numeralSystem = numeralSystem;
         this.digitFactory = digitFactory;
     }
 
-    // TODO separate splitting from creation
-    // number -> List of ints (0-9) und dann extra convertieren.
-    // then we have another collabortator for this class, the splitter = number system = math with base 10
     public List<Digit> convert(int number) {
-        List<Digit> digits = new ArrayList<>();
-        while (number > 0) {
-            digits.add(digitFactory.create(number % base));
-            number /= base;
-        }
-        Collections.reverse(digits);
-        return digits;
+        List<Integer> numeralDigits = numeralSystem.digitsOf(number);
+
+        return numeralDigits.stream(). //
+                map(digitFactory::create). // 
+                collect(Collectors.toList());
     }
 }
