@@ -13,6 +13,8 @@ public class DigitScaler {
     private final ScalingRepeater repeater;
 
     public DigitScaler(ScalingRepeater repeater) {
+        Objects.requireNonNull(repeater);
+
         this.repeater = repeater;
     }
 
@@ -25,7 +27,7 @@ public class DigitScaler {
                 collect(Collectors.toList());
     }
 
-    public Digit scale(Digit digit, Scaling scaling) {
+    private Digit scale(Digit digit, Scaling scaling) {
         Objects.requireNonNull(digit);
         Objects.requireNonNull(scaling);
         if (scaling.none()) {
@@ -34,14 +36,15 @@ public class DigitScaler {
 
         List<Line> scaled = new ArrayList<>();
 
-        boolean second = false;
+        boolean oddLine = true;
         for (Line line : digit.lines()) {
             Line scaledLine = line.scaleHorizontal(repeater, scaling);
-            scaled.add(scaledLine);
-            if (second) {
+            if (oddLine) {
+                scaled.add(scaledLine);
+            } else {
                 scaled.addAll(repeater.repeat(scaledLine, scaling));
             }
-            second = !second;
+            oddLine = !oddLine;
         }
 
         return digit.scale(scaled);
