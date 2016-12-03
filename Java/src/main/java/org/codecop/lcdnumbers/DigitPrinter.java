@@ -2,6 +2,7 @@ package org.codecop.lcdnumbers;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -12,6 +13,8 @@ public class DigitPrinter {
     private static final String NEWLINE = "\n";
 
     public String render(List<Digit> digits) {
+        Objects.requireNonNull(digits);
+        
         List<Iterator<Line>> digitLines = digits.stream(). //
                 map(Digit::lines). //
                 map(Iterable::iterator). //

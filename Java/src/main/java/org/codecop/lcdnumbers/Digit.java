@@ -1,6 +1,7 @@
 package org.codecop.lcdnumbers;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Value Object of an LCD digit.
@@ -15,6 +16,8 @@ public class Digit {
     }
 
     private Digit(int digit, List<Line> lines) {
+        Objects.requireNonNull(lines);
+
         this.digit = digit;
         this.lines = lines;
     }

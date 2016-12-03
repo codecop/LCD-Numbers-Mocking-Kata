@@ -1,23 +1,30 @@
 package org.codecop.lcdnumbers;
 
+import java.util.Objects;
+
 /**
  * Value Object of an LCD digit line.
  */
 public class Line {
-    
+
     private final String line;
 
     public Line(String line) {
+        Objects.requireNonNull(line);
+
         this.line = line;
     }
 
-    public Line scaleHorizontal(int size) {
-        if (size == 1) {
+    public Line scaleHorizontal(int times) {
+        if (times <= 0) {
+            throw new IllegalArgumentException("scaling factor must be >= 1");
+        }
+        if (times == 1) {
             return this;
         }
 
         char[] chars = line.toCharArray();
-        return new Line("" + chars[0] + repeat(chars[1], size) + chars[2]);
+        return new Line("" + chars[0] + repeat(chars[1], times) + chars[2]);
     }
 
     // TODO this is another collaborator
