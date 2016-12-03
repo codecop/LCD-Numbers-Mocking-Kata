@@ -22,7 +22,7 @@ import org.codecop.lcdnumbers.Patterns;
 public class GuidingTest {
 
     private final LcdDisplay lcdDisplay = new LcdDisplay( //
-            new DigitsSplitter(new DigitFactory(new Patterns())), //
+            new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
             new DigitScaler(),
             new DigitPrinter());
 
