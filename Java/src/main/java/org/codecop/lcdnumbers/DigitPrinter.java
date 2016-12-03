@@ -1,6 +1,5 @@
 package org.codecop.lcdnumbers;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -12,31 +11,42 @@ public class DigitPrinter {
 
     private static final String NEWLINE = "\n";
 
+    private final Zipper zipper;
+
+    public DigitPrinter(Zipper zipper) {
+        Objects.requireNonNull(zipper);
+
+        this.zipper = zipper;
+    }
+
     public String render(List<Digit> digits) {
         Objects.requireNonNull(digits);
 
-        List<Iterator<Line>> digitLines = digits.stream(). //
-                map(Digit::lines). //
-                map(Iterable::iterator). //
-                collect(Collectors.toList());
+        List<List<Line>> linesOfAllDigits = linesOfAllDigits(digits);
+        List<String> linesSideBySide = zip(linesOfAllDigits);
+        return join(linesSideBySide);
 
-        return renderLines(digitLines);
     }
 
-    // TODO extract generic zip of collections -> collaborator
+    private List<List<Line>> linesOfAllDigits(List<Digit> digits) {
+        return digits.stream(). //
+                map(Digit::lines). //
+                collect(Collectors.toList());
+    }
 
-    private String renderLines(List<Iterator<Line>> digitLines) {
-        StringBuilder out = new StringBuilder();
+    private List<String> zip(List<List<Line>> linesOfAllDigits) {
+        return zipper.zip(linesOfAllDigits, this::concat);
+    }
 
-        Iterator<Line> first = digitLines.get(0);
-        while (first.hasNext()) {
-            for (Iterator<Line> i : digitLines) {
-                out.append(i.next());
-            }
-            out.append(NEWLINE);
-        }
+    private String concat(List<Line> lines) {
+        return lines.stream(). //
+                map(Line::toString). //
+                collect(Collectors.joining());
+    }
 
-        return out.toString();
+    private String join(List<String> lines) {
+        return lines.stream(). //
+                collect(Collectors.joining(NEWLINE, "", NEWLINE));
     }
 
 }
