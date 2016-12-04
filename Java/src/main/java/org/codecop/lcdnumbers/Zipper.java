@@ -5,23 +5,27 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * Zip joins elements of collections element wise, i.e. all first elements are joined and so on.
  */
 public class Zipper {
 
-    public <T, R> List<R> zip(Collection<? extends Collection<T>> collections, Function<List<T>, R> combine) {
+    public static interface Combiner<T, R> {
+        R apply(T arg);
+    }
+    
+    public <T, R> List<R> zip(Collection<? extends Collection<T>> collections, Combiner<List<T>, R> combine) {
         Objects.requireNonNull(collections);
         Objects.requireNonNull(combine);
 
         List<R> zipped = new ArrayList<>();
 
-        List<Iterator<T>> iterators = collections.stream(). //
-                map(Iterable::iterator). //
-                collect(Collectors.toList());
+        // List<Iterator<T>> iterators = collections.map(Iterable::iterator);
+        List<Iterator<T>> iterators = new ArrayList<>();
+        for (Collection<T> c : collections) {
+            iterators.add(c.iterator());
+        }
 
         Iterator<T> first = iterators.get(0);
         while (first.hasNext()) {

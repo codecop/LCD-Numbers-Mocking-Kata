@@ -10,14 +10,6 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.stream.Collectors;
-
-import org.codecop.lcdnumbers.DigitFactory;
-import org.codecop.lcdnumbers.DigitPrinter;
-import org.codecop.lcdnumbers.DigitScaler;
-import org.codecop.lcdnumbers.DigitsSplitter;
-import org.codecop.lcdnumbers.LcdDisplay;
-import org.codecop.lcdnumbers.Patterns;
 
 public class GuidingTest {
 
@@ -72,9 +64,8 @@ public class GuidingTest {
     private String read(String name) throws IOException, URISyntaxException {
         URL classpathResource = getClass().getResource(name);
         Path fileSystemResource = Paths.get(classpathResource.toURI());
-        return Files.readAllLines(fileSystemResource). //
-                stream(). //
-                collect(Collectors.joining("\n", "", "\n"));
+        
+        return new String(Files.readAllBytes(fileSystemResource)).replaceAll("\r\n", "\n");
     }
     
 }

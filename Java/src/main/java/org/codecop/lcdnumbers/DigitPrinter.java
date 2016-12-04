@@ -1,8 +1,8 @@
 package org.codecop.lcdnumbers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Appends lines next to each other and adds line breaks.
@@ -29,24 +29,40 @@ public class DigitPrinter {
     }
 
     private List<List<Line>> linesOfAllDigits(List<Digit> digits) {
-        return digits.stream(). //
-                map(Digit::lines). //
-                collect(Collectors.toList());
+        // return digits.map(Digit::lines);
+        List<List<Line>> digitLines = new ArrayList<>();
+        for (Digit d : digits) {
+            digitLines.add(d.lines());
+        }
+        return digitLines;
     }
 
     private List<String> zip(List<List<Line>> linesOfAllDigits) {
-        return zipper.zip(linesOfAllDigits, this::concat);
+        return zipper.zip(linesOfAllDigits, /*lambda*/ new Zipper.Combiner<List<Line>, String>() {
+            @Override
+            public String apply(List<Line> arg) {
+                return concat(arg);
+            }
+        });
     }
 
     private String concat(List<Line> lines) {
-        return lines.stream(). //
-                map(Line::toString). //
-                collect(Collectors.joining());
+        // return lines.map(Line::toString).joining());
+        StringBuilder joiner = new StringBuilder();
+        for (Line line : lines) {
+            joiner.append(line.toString());
+        }
+        return joiner.toString();
     }
 
     private String join(List<String> lines) {
-        return lines.stream(). //
-                collect(Collectors.joining(NEWLINE, "", NEWLINE));
+        // return lines.joining(NEWLINE, "", NEWLINE));
+        StringBuilder joiner = new StringBuilder();
+        for (String line : lines) {
+            joiner.append(line);
+            joiner.append(NEWLINE);
+        }
+        return joiner.toString();
     }
 
 }

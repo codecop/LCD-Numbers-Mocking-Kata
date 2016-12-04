@@ -1,8 +1,8 @@
 package org.codecop.lcdnumbers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Splits into digits and converts digits to LCD digits.
@@ -23,8 +23,11 @@ public class DigitsSplitter {
     public List<Digit> convert(int number) {
         List<Integer> numeralDigits = numeralSystem.digitsOf(number);
 
-        return numeralDigits.stream(). //
-                map(digitFactory::create). //
-                collect(Collectors.toList());
+        // return numeralDigits.map(digitFactory::create);
+        List<Digit> digits = new ArrayList<>();
+        for (Integer i :numeralDigits) {
+            digits.add(digitFactory.create(i));
+        }
+        return digits;
     }
 }
