@@ -9,20 +9,30 @@ import java.util.Objects;
  */
 public class ScalingRepeater {
 
-    public <T> List<T> repeat(T element, Scaling scaling) {
+    public <T> List<T> repeat(final T element, Scaling scaling) {
         Objects.requireNonNull(element);
         Objects.requireNonNull(scaling);
 
-        List<T> elements = new ArrayList<>();
-        scaling.times(() -> elements.add(element));
+        final List<T> elements = new ArrayList<>();
+        scaling.times(/*lambda*/ new Runnable() {
+            @Override
+            public void run() {
+                elements.add(element);
+            }
+        });
         return elements;
     }
 
-    public String repeat(char aChar, Scaling scaling) {
+    public String repeat(final char aChar, Scaling scaling) {
         Objects.requireNonNull(scaling);
 
-        StringBuilder acc = new StringBuilder();
-        scaling.times(() -> acc.append(aChar));
+        final StringBuilder acc = new StringBuilder();
+        scaling.times(/*lambda*/ new Runnable() {
+            @Override
+            public void run() {
+                acc.append(aChar);
+            }
+        });
         return acc.toString();
     }
 
