@@ -12,13 +12,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
-import org.codecop.lcdnumbers.DigitFactory;
-import org.codecop.lcdnumbers.DigitPrinter;
-import org.codecop.lcdnumbers.DigitScaler;
-import org.codecop.lcdnumbers.DigitsSplitter;
-import org.codecop.lcdnumbers.LcdDisplay;
-import org.codecop.lcdnumbers.Patterns;
-
 public class GuidingTest {
 
     private final LcdDisplay lcdDisplay = new LcdDisplay( //

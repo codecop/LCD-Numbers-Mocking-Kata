@@ -1,10 +1,5 @@
 package org.codecop.lcdnumbers;
 
-import org.codecop.lcdnumbers.Digit;
-import org.codecop.lcdnumbers.DigitPrinter;
-import org.codecop.lcdnumbers.DigitScaler;
-import org.codecop.lcdnumbers.DigitsSplitter;
-import org.codecop.lcdnumbers.LcdDisplay;
 import org.junit.Test;
 
 import java.util.Collections;
