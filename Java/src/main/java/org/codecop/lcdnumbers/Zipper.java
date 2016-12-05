@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -13,7 +12,12 @@ import java.util.stream.Collectors;
  */
 public class Zipper {
 
-    public <T, R> List<R> zip(Collection<? extends Collection<T>> collections, Function<List<T>, R> combine) {
+    @FunctionalInterface
+    public interface Combiner<T, R> {
+        R combine(T t);
+    }
+    
+    public <T, R> List<R> zip(Collection<? extends Collection<T>> collections, Combiner<List<T>, R> combine) {
         Objects.requireNonNull(collections);
         Objects.requireNonNull(combine);
 
@@ -26,7 +30,7 @@ public class Zipper {
         Iterator<T> first = iterators.get(0);
         while (first.hasNext()) {
             List<T> nthElements = nextOfEach(iterators);
-            R joined = combine.apply(nthElements);
+            R joined = combine.combine(nthElements);
             zipped.add(joined);
         }
 
