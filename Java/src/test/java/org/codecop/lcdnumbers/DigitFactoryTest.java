@@ -4,10 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.codecop.lcdnumbers.Digit;
-import org.codecop.lcdnumbers.DigitFactory;
-import org.codecop.lcdnumbers.Patterns;
-
 public class DigitFactoryTest {
     @Test
     public void shouldConvertOne() {
