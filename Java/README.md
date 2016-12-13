@@ -13,7 +13,7 @@ are provided as dependencies.
 The `LcdDisplay` creates an LCD string representation of an integer value using a
 4x7 grid of space, using minus and pipe characters for each digit.
 
-● Each digit is shown below:
+Each digit is shown below:
 
      --      --  --      --  --  --  --  -- 
     |  |   |   |   ||  ||   |      ||  ||  |
@@ -23,7 +23,7 @@ The `LcdDisplay` creates an LCD string representation of an integer value using 
     |  |   ||      |   |   ||  |   ||  |   |
      --      --  --      --  --      --  -- 
 
-● The bar size should be adjustable. The default value is 2 - as shown above.
+The bar size should be adjustable. The default value is 2 - as shown above.
 
 ## Description of Classes ##
 
