@@ -1,14 +1,14 @@
-## LCD Numbers Mocking Collaborators ##
+## LCD Numbers Kata for Mocking Collaborators ##
 
 This is an implementation of the [LCD Numbers Kata](http://rubyquiz.com/quiz14.html) 
 in Java using outside-in development. There are no tests. In order to unit test its 
 classes you need to stub and mock the collaborators.
 
-This is a [Apache Maven](https://maven.apache.org/) project.  Run `mvnw test` to 
+This is a [Apache Maven](https://maven.apache.org/) project. Run `mvnw test` to 
 run your tests [JUnit](http://junit.org/) and [Mockito](http://site.mockito.org/) 
 are provided as dependencies.
 
-## Description of Requirements ##
+## Requirements ##
 
 The `LcdDisplay` creates an LCD string representation of an integer value using a
 4x7 grid of space, using minus and pipe characters for each digit.
@@ -38,7 +38,7 @@ the list of digits is combined to a single String by the `DigitPrinter`.
 ## Assignment ##
 
 Create unit tests for all classes.  Make sure all units are tested in isolation.
-There are sample LCD outputs in the `src/test/resources` folder. 
+There are sample LCD outputs in the `src/test/resources` folder.
 
 ### Check your Coverage ###
 
