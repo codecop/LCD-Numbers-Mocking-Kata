@@ -1,44 +1,57 @@
-using Sharpen;
+using System;
 
 namespace Org.Codecop.Lcdnumbers
 {
-	/// <summary>Value Object of an LCD digit line.</summary>
-	public class Line
-	{
-		private readonly string line;
+    /// <summary>Value Object of an LCD digit line.</summary>
+    public class Line
+    {
+        private readonly string line;
 
-		public Line(string line)
-		{
-			Objects.RequireNonNull(line);
-			this.line = line;
-		}
+        public Line(string line)
+        {
+            if (line == null)
+            {
+                throw new ArgumentNullException(nameof(line));
+            }
 
-		public virtual Org.Codecop.Lcdnumbers.Line ScaleHorizontal(ScalingRepeater repeater, Scaling scaling)
-		{
-			Objects.RequireNonNull(repeater);
-			Objects.RequireNonNull(scaling);
-			char[] chars = line.ToCharArray();
-			return new Org.Codecop.Lcdnumbers.Line(chars[0] + repeater.Repeat(chars[1], scaling) + chars[2]);
-		}
+            this.line = line;
+        }
 
-		public override bool Equals(object other)
-		{
-			if (!(other is Org.Codecop.Lcdnumbers.Line))
-			{
-				return false;
-			}
-			Org.Codecop.Lcdnumbers.Line that = (Org.Codecop.Lcdnumbers.Line)other;
-			return this.line.Equals(that.line);
-		}
+        public virtual Line ScaleHorizontal(ScalingRepeater repeater, Scaling scaling)
+        {
+            if (repeater == null)
+            {
+                throw new ArgumentNullException(nameof(repeater));
+            }
 
-		public override int GetHashCode()
-		{
-			return line.GetHashCode();
-		}
+            if (scaling == null)
+            {
+                throw new ArgumentNullException(nameof(scaling));
+            }
 
-		public override string ToString()
-		{
-			return line;
-		}
-	}
+            char[] chars = line.ToCharArray();
+            return new Line(chars[0] + repeater.Repeat(chars[1], scaling) + chars[2]);
+        }
+
+        public override bool Equals(object other)
+        {
+            if (!(other is Line))
+            {
+                return false;
+            }
+
+            Line that = (Line)other;
+            return this.line.Equals(that.line);
+        }
+
+        public override int GetHashCode()
+        {
+            return line.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return line;
+        }
+    }
 }

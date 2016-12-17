@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LcdNumbers": {
+      "commandName": "Project",
+      "commandLineArgs": "258 5"
+    }
+  }
+}

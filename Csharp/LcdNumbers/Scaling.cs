@@ -1,63 +1,66 @@
 using System;
-using Sharpen;
 
 namespace Org.Codecop.Lcdnumbers
 {
-	/// <summary>The scale factor value.</summary>
-	public class Scaling
-	{
-		public static readonly Org.Codecop.Lcdnumbers.Scaling None = new Org.Codecop.Lcdnumbers.Scaling(1);
+    /// <summary>The scale factor value.</summary>
+    public class Scaling
+    {
+        public static readonly Scaling None = new Scaling(1);
+        public static readonly Scaling Two = new Scaling(2);
 
-		public static readonly Org.Codecop.Lcdnumbers.Scaling Two = new Org.Codecop.Lcdnumbers.Scaling(2);
+        private readonly int times;
 
-		private readonly int times;
+        public static Scaling Of(int t)
+        {
+            return new Scaling(t);
+        }
 
-		public static Org.Codecop.Lcdnumbers.Scaling Of(int t)
-		{
-			return new Org.Codecop.Lcdnumbers.Scaling(t);
-		}
+        private Scaling(int times)
+        {
+            if (times <= 0)
+            {
+                throw new ArgumentException("scaling factor must be >= 1");
+            }
+            this.times = times;
+        }
 
-		private Scaling(int times)
-		{
-			if (times <= 0)
-			{
-				throw new ArgumentException("scaling factor must be >= 1");
-			}
-			this.times = times;
-		}
+        public virtual bool HasNone()
+        {
+            return times == 1;
+        }
 
-		public virtual bool None()
-		{
-			return times == 1;
-		}
+        public virtual void Times(Action block)
+        {
+            if (block == null)
+            {
+                throw new ArgumentNullException(nameof(block));
+            }
 
-		public virtual void Times(Runnable block)
-		{
-			Objects.RequireNonNull(block);
-			for (int i = 0; i < times; i++)
-			{
-				block.Run();
-			}
-		}
+            for (int i = 0; i < times; i++)
+            {
+                block();
+            }
+        }
 
-		public override bool Equals(object other)
-		{
-			if (!(other is Org.Codecop.Lcdnumbers.Scaling))
-			{
-				return false;
-			}
-			Org.Codecop.Lcdnumbers.Scaling that = (Org.Codecop.Lcdnumbers.Scaling)other;
-			return this.times == that.times;
-		}
+        public override bool Equals(object other)
+        {
+            if (!(other is Scaling))
+            {
+                return false;
+            }
 
-		public override int GetHashCode()
-		{
-			return times;
-		}
+            Scaling that = (Scaling)other;
+            return this.times == that.times;
+        }
 
-		public override string ToString()
-		{
-			return Sharpen.Extensions.ToString(times);
-		}
-	}
+        public override int GetHashCode()
+        {
+            return times;
+        }
+
+        public override string ToString()
+        {
+            return times.ToString();
+        }
+    }
 }
