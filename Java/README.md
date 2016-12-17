@@ -2,7 +2,7 @@
 
 This is an implementation of the [LCD Numbers Kata](http://rubyquiz.com/quiz14.html)
 in Java using outside-in development. There are no tests. In order to unit test its
-classes you need to create [test doubles}(http://martinfowler.com/bliki/TestDouble.html)
+classes you need to create [test doubles](http://martinfowler.com/bliki/TestDouble.html)
 for the collaborators.
 
 This is an [Apache Maven](https://maven.apache.org/) project. Run `mvnw test` to
@@ -13,7 +13,6 @@ are provided as dependencies.
 
 The `LcdDisplay` creates an LCD string representation of an integer value using a
 4x7 grid of space, using minus and pipe characters for each digit.
-
 Each digit is shown below:
 
      --      --  --      --  --  --  --  -- 
