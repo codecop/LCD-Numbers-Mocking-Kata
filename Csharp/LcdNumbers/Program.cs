@@ -20,6 +20,8 @@ namespace Org.Codecop.Lcdnumbers
             Scaling scaling = Scaling.Of(Convert.ToInt32(args[1]));
 
             Console.WriteLine(lcdDisplay.ToLcd(number, scaling));
+
+            Console.ReadKey();
         }
     }
 }
