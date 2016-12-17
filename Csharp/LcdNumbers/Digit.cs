@@ -26,12 +26,12 @@ namespace Org.Codecop.Lcdnumbers
             this.lines = lines;
         }
 
-        internal virtual IList<Line> Lines()
+        public virtual IList<Line> Lines()
         {
             return lines;
         }
 
-        internal virtual Digit Scale(IList<Line> scaledLines)
+        public virtual Digit Scale(IList<Line> scaledLines)
         {
             if (scaledLines == null)
             {
