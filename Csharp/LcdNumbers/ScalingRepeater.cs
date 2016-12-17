@@ -15,7 +15,6 @@ namespace Org.Codecop.Lcdnumbers
             {
                 throw new ArgumentNullException(nameof(element));
             }
-
             if (scaling == null)
             {
                 throw new ArgumentNullException(nameof(scaling));
@@ -23,7 +22,6 @@ namespace Org.Codecop.Lcdnumbers
 
             IList<T> elements = new List<T>();
             scaling.Times(() => elements.Add(element));
-
             return elements;
         }
 
@@ -36,7 +34,6 @@ namespace Org.Codecop.Lcdnumbers
 
             StringBuilder acc = new StringBuilder();
             scaling.Times(() => acc.Append(aChar));
-
             return acc.ToString();
         }
     }

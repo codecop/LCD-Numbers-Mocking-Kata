@@ -23,7 +23,6 @@ namespace Org.Codecop.Lcdnumbers
             {
                 throw new ArgumentNullException(nameof(repeater));
             }
-
             if (scaling == null)
             {
                 throw new ArgumentNullException(nameof(scaling));

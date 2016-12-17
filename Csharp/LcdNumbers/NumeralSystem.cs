@@ -4,8 +4,7 @@ using System.Linq;
 
 namespace Org.Codecop.Lcdnumbers
 {
-    /// <summary>Splits a number into its digits according to its numeral system, e.g.</summary>
-    /// <remarks>Splits a number into its digits according to its numeral system, e.g. Decimal System.</remarks>
+    /// <summary>Splits a number into its digits according to its numeral system, e.g. Decimal System.</summary>
     public class NumeralSystem
     {
         private readonly int @base;
@@ -33,8 +32,8 @@ namespace Org.Codecop.Lcdnumbers
             }
 
             IList<int> digits = new List<int>();
+            
             int remainder = value;
-
             while (remainder > 0)
             {
                 digits.Add(remainder % @base);
