@@ -67,3 +67,6 @@ ehthumbs.db
 Desktop.ini
 
 test-resources/size_*
+
+.vs/
+.vscode/
