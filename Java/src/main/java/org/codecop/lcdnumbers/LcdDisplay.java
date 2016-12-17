@@ -29,5 +29,4 @@ public class LcdDisplay {
         List<Digit> scaled = digitScaler.scale(digits, scaling);
         return digitPrinter.render(scaled);
     }
-
 }

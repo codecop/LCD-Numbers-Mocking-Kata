@@ -10,6 +10,7 @@ import java.util.Collections;
 import org.junit.Test;
 
 public class DigitPrinterTest {
+    
     @Test
     public void testShouldPrintOne() {
         Digit one = mock(Digit.class);

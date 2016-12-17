@@ -22,11 +22,11 @@ public class Digit {
         this.lines = lines;
     }
 
-    List<Line> lines() {
+    public List<Line> lines() {
         return lines;
     }
 
-    Digit scale(List<Line> scaledLines) {
+    public Digit scale(List<Line> scaledLines) {
         Objects.requireNonNull(scaledLines);
 
         int linesCount = lines.size();
