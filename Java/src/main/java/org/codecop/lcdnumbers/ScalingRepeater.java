@@ -25,5 +25,4 @@ public class ScalingRepeater {
         scaling.times(() -> acc.append(aChar));
         return acc.toString();
     }
-
 }

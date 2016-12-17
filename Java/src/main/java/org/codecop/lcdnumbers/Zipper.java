@@ -44,5 +44,4 @@ public class Zipper {
         }
         return nthElements;
     }
-
 }

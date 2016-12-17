@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class DigitFactoryTest {
+
     @Test
     public void shouldConvertOne() {
         Patterns patterns = new Patterns();

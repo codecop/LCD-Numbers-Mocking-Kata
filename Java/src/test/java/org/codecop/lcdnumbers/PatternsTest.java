@@ -7,6 +7,7 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 public class PatternsTest {
+    
     @Test
     public void shouldKnowLinesOfOne() {
         Patterns patterns = new Patterns();

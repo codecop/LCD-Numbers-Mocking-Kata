@@ -25,7 +25,6 @@ public class DigitPrinter {
         List<List<Line>> linesOfAllDigits = linesOfAllDigits(digits);
         List<String> linesSideBySide = zip(linesOfAllDigits);
         return join(linesSideBySide);
-
     }
 
     private List<List<Line>> linesOfAllDigits(List<Digit> digits) {

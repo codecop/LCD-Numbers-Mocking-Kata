@@ -54,5 +54,4 @@ public class Scaling {
     public String toString() {
         return Integer.toString(times);
     }
-
 }

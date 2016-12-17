@@ -1,7 +1,8 @@
 package org.codecop.lcdnumbers;
 
 /**
- * Fake client code.
+ * Fake client code. Run this class to see LCD Numbers working:
+ * <code>Main 12345 2</code>.
  */
 public class Main {
 
