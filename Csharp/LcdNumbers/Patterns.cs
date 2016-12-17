@@ -5,7 +5,7 @@ using System.Linq;
 namespace Org.Codecop.Lcdnumbers
 {
     /// <summary>Knows the initial pattern of each LCD digit.</summary>
-    public class Patterns
+    public class Patterns : IPatterns
     {
         private readonly IDictionary<int, IList<Line>> lcdByDigit = new Dictionary<int, IList<Line>>();
 
