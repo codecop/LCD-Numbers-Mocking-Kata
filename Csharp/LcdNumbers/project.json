@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable",
@@ -13,8 +13,7 @@
   },
 
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": "dnxcore50"
+    "netcoreapp1.1": {
     }
   }
 }
