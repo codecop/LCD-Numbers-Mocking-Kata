@@ -1,65 +1,43 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Sharpen;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Org.Codecop.Lcdnumbers
 {
-	/// <summary>Repeat objects and characters according to scaling.</summary>
-	public class ScalingRepeater
-	{
-		public virtual IList<T> Repeat<T>(T element, Scaling scaling)
-		{
-			Objects.RequireNonNull(element);
-			Objects.RequireNonNull(scaling);
-			IList<T> elements = new AList<T>();
-			scaling.Times(new _Runnable_17(elements, element));
-			/*lambda*/
-			return elements;
-		}
+    /// <summary>Repeat objects and characters according to scaling.</summary>
+    public class ScalingRepeater
+    {
+        public virtual IList<T> Repeat<T>(T element, Scaling scaling)
+        {
+            if (element == null)
+            {
+                throw new ArgumentNullException(nameof(element));
+            }
 
-		private sealed class _Runnable_17 : Runnable
-		{
-			public _Runnable_17(IList<T> elements, T element)
-			{
-				this.elements = elements;
-				this.element = element;
-			}
+            if (scaling == null)
+            {
+                throw new ArgumentNullException(nameof(scaling));
+            }
 
-			public void Run()
-			{
-				elements.Add(element);
-			}
+            IList<T> elements = new List<T>();
+            scaling.Times(() => elements.Add(element));
 
-			private readonly IList<T> elements;
+            return elements;
+        }
 
-			private readonly T element;
-		}
+        public virtual string Repeat(char aChar, Scaling scaling)
+        {
+            if (scaling == null)
+            {
+                throw new ArgumentNullException(nameof(scaling));
+            }
 
-		public virtual string Repeat(char aChar, Scaling scaling)
-		{
-			Objects.RequireNonNull(scaling);
-			StringBuilder acc = new StringBuilder();
-			scaling.Times(new _Runnable_30(acc, aChar));
-			/*lambda*/
-			return acc.ToString();
-		}
+            StringBuilder acc = new StringBuilder();
+            scaling.Times(() => acc.Append(aChar));
 
-		private sealed class _Runnable_30 : Runnable
-		{
-			public _Runnable_30(StringBuilder acc, char aChar)
-			{
-				this.acc = acc;
-				this.aChar = aChar;
-			}
-
-			public void Run()
-			{
-				acc.Append(aChar);
-			}
-
-			private readonly StringBuilder acc;
-
-			private readonly char aChar;
-		}
-	}
+            return acc.ToString();
+        }
+    }
 }

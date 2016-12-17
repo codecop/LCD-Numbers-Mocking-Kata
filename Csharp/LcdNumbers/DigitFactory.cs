@@ -1,21 +1,25 @@
-using Sharpen;
+using System;
 
 namespace Org.Codecop.Lcdnumbers
 {
-	/// <summary>Creates (LCD) digits from patterns.</summary>
-	public class DigitFactory
-	{
-		private readonly Patterns patterns;
+    /// <summary>Creates (LCD) digits from patterns.</summary>
+    public class DigitFactory
+    {
+        private readonly Patterns patterns;
 
-		public DigitFactory(Patterns patterns)
-		{
-			Objects.RequireNonNull(patterns);
-			this.patterns = patterns;
-		}
+        public DigitFactory(Patterns patterns)
+        {
+            if (patterns == null)
+            {
+                throw new ArgumentNullException(nameof(patterns));
+            }
 
-		public virtual Digit Create(int digit)
-		{
-			return new Digit(digit, patterns);
-		}
-	}
+            this.patterns = patterns;
+        }
+
+        public virtual Digit Create(int digit)
+        {
+            return new Digit(digit, patterns);
+        }
+    }
 }
