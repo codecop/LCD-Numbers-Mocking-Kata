@@ -9,7 +9,7 @@ namespace Org.Codecop.Lcdnumbers
         private readonly int digit;
         private readonly IList<Line> lines;
 
-        public Digit(int digit, Patterns patterns)
+        public Digit(int digit, IPatterns patterns)
             : this(digit, patterns.Of(digit))
         {
         }
