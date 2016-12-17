@@ -45,16 +45,16 @@ namespace Org.Codecop.Lcdnumbers
 
         private string Concat(IList<Line> lines)
         {
-            return lines
-                .Select(l => l.ToString())
+            return lines //
+                .Select(l => l.ToString()) //
                 .Aggregate((current, next) => current + next);
         }
 
         private string Join(IList<string> lines)
         {
-            return lines
-                .Select(l => l.ToString())
-                .Aggregate((current, next) => current + Newline + next);
+            return lines //
+                .Select(l => l.ToString()) //
+                .Aggregate((current, next) => current + Newline + next) + Newline;
         }
     }
 }

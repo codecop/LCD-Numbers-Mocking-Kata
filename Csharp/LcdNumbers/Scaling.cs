@@ -21,6 +21,7 @@ namespace Org.Codecop.Lcdnumbers
             {
                 throw new ArgumentException("scaling factor must be >= 1");
             }
+            
             this.times = times;
         }
 

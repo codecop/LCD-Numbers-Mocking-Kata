@@ -11,52 +11,56 @@ namespace Org.Codecop.Lcdnumbers
 
         public Patterns()
         {
-            Put(0, new Line(" - "), new Line("| |"), new Line("   "), new Line("| |"), new Line(" - "));
-            //
-            //
-            //
-            //
-            Put(1, new Line("   "), new Line("  |"), new Line("   "), new Line("  |"), new Line("   "));
-            //
-            //
-            //
-            //
-            Put(2, new Line(" - "), new Line("  |"), new Line(" - "), new Line("|  "), new Line(" - "));
-            //
-            //
-            //
-            //
-            Put(3, new Line(" - "), new Line("  |"), new Line(" - "), new Line("  |"), new Line(" - "));
-            //
-            //
-            //
-            //
-            Put(4, new Line("   "), new Line("| |"), new Line(" - "), new Line("  |"), new Line("   "));
-            //
-            //
-            //
-            //
-            Put(5, new Line(" - "), new Line("|  "), new Line(" - "), new Line("  |"), new Line(" - "));
-            //
-            //
-            //
-            //
-            Put(6, new Line(" - "), new Line("|  "), new Line(" - "), new Line("| |"), new Line(" - "));
-            //
-            //
-            //
-            //
-            Put(7, new Line(" - "), new Line("  |"), new Line("   "), new Line("  |"), new Line("   "));
-            //
-            //
-            //
-            //
-            Put(8, new Line(" - "), new Line("| |"), new Line(" - "), new Line("| |"), new Line(" - "));
-            //
-            //
-            //
-            //
-            Put(9, new Line(" - "), new Line("| |"), new Line(" - "), new Line("  |"), new Line(" - "));
+            Put(0, new Line(" - "), //
+                   new Line("| |"), //
+                   new Line("   "), //
+                   new Line("| |"), //
+                   new Line(" - "));
+            Put(1, new Line("   "), //
+                   new Line("  |"), //
+                   new Line("   "), //
+                   new Line("  |"), //
+                   new Line("   "));
+            Put(2, new Line(" - "), //
+                   new Line("  |"), //
+                   new Line(" - "), //
+                   new Line("|  "), //
+                   new Line(" - "));
+            Put(3, new Line(" - "), //
+                   new Line("  |"), //
+                   new Line(" - "), //
+                   new Line("  |"), //
+                   new Line(" - "));
+            Put(4, new Line("   "), //
+                   new Line("| |"), //
+                   new Line(" - "), //
+                   new Line("  |"), //
+                   new Line("   "));
+            Put(5, new Line(" - "), //
+                   new Line("|  "), //
+                   new Line(" - "), //
+                   new Line("  |"), //
+                   new Line(" - "));
+            Put(6, new Line(" - "), //
+                   new Line("|  "), //
+                   new Line(" - "), //
+                   new Line("| |"), //
+                   new Line(" - "));
+            Put(7, new Line(" - "), //
+                   new Line("  |"), //
+                   new Line("   "), //
+                   new Line("  |"), //
+                   new Line("   "));
+            Put(8, new Line(" - "), //
+                   new Line("| |"), //
+                   new Line(" - "), //
+                   new Line("| |"), //
+                   new Line(" - "));
+            Put(9, new Line(" - "), //
+                   new Line("| |"), //
+                   new Line(" - "), //
+                   new Line("  |"), //
+                   new Line(" - "));
         }
 
         private void Put(int digit, params Line[] lines)

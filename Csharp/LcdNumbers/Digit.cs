@@ -7,7 +7,6 @@ namespace Org.Codecop.Lcdnumbers
     public class Digit
     {
         private readonly int digit;
-
         private readonly IList<Line> lines;
 
         public Digit(int digit, Patterns patterns)
@@ -40,7 +39,6 @@ namespace Org.Codecop.Lcdnumbers
 
             int linesCount = lines.Count;
             int scaledCount = scaledLines.Count;
-
             if (scaledCount < linesCount)
             {
                 throw new ArgumentException("Scaled lines must be more than original ones: " + scaledCount + ">=" + linesCount);
@@ -57,7 +55,6 @@ namespace Org.Codecop.Lcdnumbers
             }
 
             Digit that = (Digit)other;
-
             return this.digit == that.digit;
         }
 

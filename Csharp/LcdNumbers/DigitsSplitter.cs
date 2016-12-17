@@ -16,7 +16,6 @@ namespace Org.Codecop.Lcdnumbers
             {
                 throw new ArgumentNullException(nameof(numeralSystem));
             }
-
             if (digitFactory == null)
             {
                 throw new ArgumentNullException(nameof(digitFactory));

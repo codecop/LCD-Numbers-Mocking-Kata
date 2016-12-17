@@ -24,20 +24,12 @@ namespace Org.Codecop.Lcdnumbers
             {
                 throw new ArgumentNullException(nameof(digits));
             }
-
             if (scaling == null)
             {
                 throw new ArgumentNullException(nameof(scaling));
             }
 
-            // return digits.map(d -> scale(d, scaling));
-            IList<Digit> scaled = new List<Digit>();
-
-            foreach (Digit d in digits)
-            {
-                scaled.Add(Scale(d, scaling));
-            }
-            return scaled;
+            return digits.Select(d => Scale(d, scaling)).ToList();
         }
 
         private Digit Scale(Digit digit, Scaling scaling)
@@ -46,7 +38,6 @@ namespace Org.Codecop.Lcdnumbers
             {
                 throw new ArgumentNullException(nameof(digit));
             }
-
             if (scaling == null)
             {
                 throw new ArgumentNullException(nameof(scaling));
@@ -58,12 +49,11 @@ namespace Org.Codecop.Lcdnumbers
             }
 
             List<Line> scaled = new List<Line>();
-            bool oddLine = true;
 
+            bool oddLine = true;
             foreach (Line line in digit.Lines())
             {
                 Line scaledLine = line.ScaleHorizontal(repeater, scaling);
-
                 if (oddLine)
                 {
                     scaled.Add(scaledLine);
@@ -72,7 +62,6 @@ namespace Org.Codecop.Lcdnumbers
                 {
                     scaled.AddRange(repeater.Repeat(scaledLine, scaling));
                 }
-
                 oddLine = !oddLine;
             }
 

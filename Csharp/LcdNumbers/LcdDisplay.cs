@@ -16,12 +16,10 @@ namespace Org.Codecop.Lcdnumbers
             {
                 throw new ArgumentNullException(nameof(digitsSplitter));
             }
-
             if (digitScaler == null)
             {
                 throw new ArgumentNullException(nameof(digitScaler));
             }
-
             if (digitPrinter == null)
             {
                 throw new ArgumentNullException(nameof(digitPrinter));
@@ -41,7 +39,6 @@ namespace Org.Codecop.Lcdnumbers
 
             IList<Digit> digits = digitsSplitter.Convert(number);
             IList<Digit> scaled = digitScaler.Scale(digits, scaling);
-
             return digitPrinter.Render(scaled);
         }
     }
