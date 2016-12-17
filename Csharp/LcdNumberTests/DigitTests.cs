@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Moq;
 
-namespace LcdNumbers.Tests
+namespace Org.Codecop.Lcdnumbers.Tests
 {
     public class DigitTests
     {
