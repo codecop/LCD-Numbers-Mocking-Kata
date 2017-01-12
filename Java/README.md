@@ -70,7 +70,7 @@ To measure your progress you can use code coverage tools
   Note that PIT does not work if there are any blanks in the path names leading to the current location.
 
 ### Warning ###
-Fixing all calls to other classes in a test is not recommended in real unit tests 
+Enforcing all calls to other classes in a test is not recommended in real unit tests 
 because this leads to bad tests which are bound to the implementation. These 
 over specified tests make it impossible to change the code under test without breaking. 
 We want to be able to change the code without breaking the test as long as the 
