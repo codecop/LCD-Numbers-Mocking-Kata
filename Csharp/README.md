@@ -58,7 +58,7 @@ There are sample LCD outputs in the `test-resources` folder to be used in tests.
 
 ### Warning ###
 
-Fixing all calls to other classes in a test is not recommended in real unit tests 
+Enforcing all calls to other classes in a test is not recommended in real unit tests 
 because this leads to bad tests which are bound to the implementation. These 
 over specified tests make it impossible to change the code under test without breaking. 
 We want to be able to change the code without breaking the test as long as the 
