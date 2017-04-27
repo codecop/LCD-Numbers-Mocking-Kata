@@ -30,6 +30,7 @@ public class DigitScaler {
     private Digit scale(Digit digit, Scaling scaling) {
         Objects.requireNonNull(digit);
         Objects.requireNonNull(scaling);
+
         if (scaling.none()) {
             return digit;
         }
