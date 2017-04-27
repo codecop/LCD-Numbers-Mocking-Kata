@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Value Object of an LCD digit line.
  */
-public class Line {
+public final class Line {
 
     private final String line;
 

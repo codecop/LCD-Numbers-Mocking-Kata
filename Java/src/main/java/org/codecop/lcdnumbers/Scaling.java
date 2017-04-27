@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * The scale factor value.
  */
-public class Scaling {
+public final class Scaling {
 
     public static final Scaling NONE = new Scaling(1);
     public static final Scaling TWO = new Scaling(2);
