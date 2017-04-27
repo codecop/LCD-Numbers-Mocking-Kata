@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Value Object of an LCD digit.
  */
-public class Digit {
+public final class Digit {
 
     private final int digit;
     private final List<Line> lines;
