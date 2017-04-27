@@ -9,22 +9,27 @@ import static org.mockito.Mockito.when;
 
 public class LineTest {
 
+    final String left = "a";
+    final char middle = 'b';
+    final String right = "c";
+    final String replaced = "xx";
+    final Scaling scaling = Scaling.NONE; // fake
+
     @Test
     public void equalsContract() {
-        EqualsVerifier.forClass(Line.class).//
+        EqualsVerifier.forClass(Line.class). //
                 withNonnullFields("line"). //
                 verify();
     }
 
     @Test
-    public void shouldScaleHorizontal() {
-        Line line = new Line("abc");
+    public void shouldScaleMiddleCharacterHorizontally() {
         ScalingRepeater repeater = mock(ScalingRepeater.class);
-        Scaling scale = Scaling.NONE; // fake
-        when(repeater.repeat('b', scale)).thenReturn("xx");
+        when(repeater.repeat(middle, scaling)).thenReturn(replaced);
 
-        Line scaledLine = line.scaleHorizontal(repeater, scale);
+        Line line = new Line(left + middle + right);
+        Line scaledLine = line.scaleHorizontal(repeater, scaling);
 
-        assertEquals("axxc", scaledLine.toString());
+        assertEquals(left + replaced + right, scaledLine.toString());
     }
 }
