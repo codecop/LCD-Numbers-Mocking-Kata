@@ -1,10 +1,13 @@
 package org.codecop.lcdnumbers;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class LineTest {
@@ -13,7 +16,14 @@ public class LineTest {
     final char middle = 'b';
     final String right = "c";
     final String replaced = "xx";
-    final Scaling scaling = Scaling.NONE; // fake
+
+    @Rule
+    public MockitoRule mockito = MockitoJUnit.rule();
+
+    @Mock
+    Scaling scaling; // fake
+    @Mock
+    ScalingRepeater repeater; // stub
 
     @Test
     public void equalsContract() {
@@ -24,7 +34,6 @@ public class LineTest {
 
     @Test
     public void shouldScaleMiddleCharacterHorizontally() {
-        ScalingRepeater repeater = mock(ScalingRepeater.class);
         when(repeater.repeat(middle, scaling)).thenReturn(replaced);
 
         Line line = new Line(left + middle + right);

@@ -5,6 +5,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,6 +18,16 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class DigitTest {
+
+    @Rule
+    public MockitoRule mockito = MockitoJUnit.rule();
+
+    @Mock
+    Line originalLine;
+    @Mock
+    Line anotherLine;
+    @Mock
+    Line secondLine;
 
     Digit digit;
 
@@ -30,9 +43,10 @@ public class DigitTest {
 
     @Before
     public void patternForOne() {
-        Patterns patterns = mock(Patterns.class);
-        List<Line> someLines = Collections.singletonList(new Line("dummy"));
+        Patterns patterns = mock(Patterns.class); // stub
+        List<Line> someLines = Collections.singletonList(originalLine);
         when(patterns.of(1)).thenReturn(someLines);
+
         digit = new Digit(1, patterns);
     }
 
@@ -48,7 +62,7 @@ public class DigitTest {
 
     @Test
     public void shouldReplaceLinesWhenScalingWithSameSize() {
-        List<Line> sameLines = Collections.singletonList(new Line("another line"));
+        List<Line> sameLines = Collections.singletonList(anotherLine);
 
         Digit scaledDigit = digit.scale(sameLines);
 
@@ -57,7 +71,7 @@ public class DigitTest {
 
     @Test
     public void shouldReplaceLinesWhenScalingWithMoreLines() {
-        List<Line> moreLines = Arrays.asList(new Line("line 1"), new Line("line 2"));
+        List<Line> moreLines = Arrays.asList(anotherLine, secondLine);
 
         Digit scaledDigit = digit.scale(moreLines);
 
