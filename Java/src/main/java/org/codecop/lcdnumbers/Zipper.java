@@ -16,7 +16,7 @@ public class Zipper {
     public interface Combiner<T, R> {
         R combine(T t);
     }
-    
+
     public <T, R> List<R> zip(Collection<? extends Collection<T>> collections, Combiner<List<T>, R> combine) {
         Objects.requireNonNull(collections);
         Objects.requireNonNull(combine);
@@ -26,6 +26,10 @@ public class Zipper {
         List<Iterator<T>> iterators = collections.stream(). //
                 map(Iterable::iterator). //
                 collect(Collectors.toList());
+
+        if (iterators.isEmpty()) {
+            return zipped;
+        }
 
         Iterator<T> first = iterators.get(0);
         while (first.hasNext()) {
