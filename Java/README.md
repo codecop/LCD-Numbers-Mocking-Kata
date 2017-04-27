@@ -47,7 +47,7 @@ The point of this exercise is to go extreme to practise using test doubles.
 **Create test doubles for everything!** Create dummy objects for all used values
 and stub all collaborators, even the most simple classes like `Scaling` and `Line`.
 
-1. Start testing the simple units like `Line`, `Scaling` and `Digit`.
+1. Start testing the simple units like `Scaling`, `Line` and `Digit`.
    These units have a single (interesting) method with a single collaborator.
 1. Work on `DigitPrinter` and `DigitScaler`. Both have more logic, but still only 
    a single collaborator.
