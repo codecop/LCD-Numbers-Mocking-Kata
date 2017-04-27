@@ -1,6 +1,7 @@
 package org.codecop.lcdnumbers;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -15,6 +16,8 @@ import static org.mockito.Mockito.when;
 
 public class DigitTest {
 
+    Digit digit;
+
     @Rule
     public ExpectedException caughtException = ExpectedException.none();
 
@@ -25,27 +28,28 @@ public class DigitTest {
                 verify();
     }
 
+    @Before
+    public void patternForOne() {
+        Patterns patterns = mock(Patterns.class);
+        List<Line> someLines = Collections.singletonList(new Line("dummy"));
+        when(patterns.of(1)).thenReturn(someLines);
+        digit = new Digit(1, patterns);
+    }
+
     @Test
     public void shouldFailWhenScalingWithFewerLines() {
-        Patterns patterns = mock(Patterns.class);
-        when(patterns.of(1)).thenReturn(Collections.singletonList(new Line("dummy")));
-        Digit digit = new Digit(1, patterns);
-
         caughtException.expect(IllegalArgumentException.class);
-        // PIT forces me to over specify message
         caughtException.expectMessage("Scaled lines must be more than original ones: 0>=1");
+        // PIT forces me to over specify message
 
-        List<Line> fewLines = Collections.emptyList();
-        digit.scale(fewLines);
+        List<Line> fewerLines = Collections.emptyList();
+        digit.scale(fewerLines);
     }
 
     @Test
     public void shouldReplaceLinesWhenScalingWithSameSize() {
-        Patterns patterns = mock(Patterns.class);
-        when(patterns.of(1)).thenReturn(Collections.singletonList(new Line("dummy")));
-        Digit digit = new Digit(1, patterns);
+        List<Line> sameLines = Collections.singletonList(new Line("another line"));
 
-        List<Line> sameLines = Collections.singletonList(new Line("scaled"));
         Digit scaledDigit = digit.scale(sameLines);
 
         assertEquals(sameLines, scaledDigit.lines());
@@ -53,11 +57,8 @@ public class DigitTest {
 
     @Test
     public void shouldReplaceLinesWhenScalingWithMoreLines() {
-        Patterns patterns = mock(Patterns.class);
-        when(patterns.of(1)).thenReturn(Collections.singletonList(new Line("dummy")));
-        Digit digit = new Digit(1, patterns);
+        List<Line> moreLines = Arrays.asList(new Line("line 1"), new Line("line 2"));
 
-        List<Line> moreLines = Arrays.asList(new Line("111"), new Line("222"));
         Digit scaledDigit = digit.scale(moreLines);
 
         assertEquals(moreLines, scaledDigit.lines());
