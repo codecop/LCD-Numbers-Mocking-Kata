@@ -38,13 +38,14 @@ the list of digits is combined to a single String by the `DigitPrinter`.
 
 ![UML Class Diagram](model/LcdDisplay_Class_Diagram.png)
 
-There is a `Main` class to see the LCD Numbers working. There you can see how all the
-classes are assembled and collaborators are combined with each other. You can run the
-`Main` with
+There is a class `Main` to see the LCD Numbers working. There you can see how all the
+classes are assembled and collaborators are combined with each other.
+You can run the `Main` with
 
     java org.codecop.lcdnumbers.Main <number, e.g. 123> <size, e.g. 2>
 
 ## Creating Unit Tests ##
+
 Create unit tests for all classes. Make sure all units are tested in isolation.
 The point of this exercise is to go extreme to practise using test doubles.
 **Create test doubles for everything!** Create dummy objects for all used values
@@ -62,7 +63,6 @@ The `size_1`, `size_2` and `size_3` folders contain each digit in original size 
 scaled twice and three times.
 
 ### Check your Coverage ###
-
 To measure your progress you should use code coverage tools:
 
 * EclEmma inside of Eclipse.
