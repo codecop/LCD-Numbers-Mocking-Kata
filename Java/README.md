@@ -36,6 +36,8 @@ by `DigitScaler` according to the `Scaling` value. The actual scaling is done in
 the `ScalingRepeater` by repeating certain rows and columns of the template. Finally
 the list of digits is combined to a single String by the `DigitPrinter`.
 
+![UML Class Diagram](model/LcdDisplay_Class_Diagram.png)
+
 There is a `Main` class to see the LCD Numbers working. There you can see how all the
 classes are assembled and collaborators are combined with each other. You can run the
 `Main` with
