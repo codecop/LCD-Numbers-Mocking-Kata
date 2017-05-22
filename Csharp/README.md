@@ -73,3 +73,6 @@ required functionality is not changed. This exercise is for practising test doub
 
 ### License ###
 This work is licensed under a [New BSD License](http://opensource.org/licenses/bsd-license.php), see `license txt` in repository.
+
+### Contributions ###
+Thanks to Bernhard König for porting this exercise to C#.
