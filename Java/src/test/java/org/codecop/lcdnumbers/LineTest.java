@@ -15,7 +15,7 @@ public class LineTest {
     final String left = "a";
     final char middle = 'b';
     final String right = "c";
-    final String replaced = "xx";
+    final String replaced = "bb";
 
     @Rule
     public MockitoRule mockito = MockitoJUnit.rule();
