@@ -36,8 +36,8 @@ public class DigitTest {
 
     @Test
     public void equalsContract() {
-        EqualsVerifier.forClass(Digit.class).//
-                withIgnoredFields("lines").
+        EqualsVerifier.forClass(Digit.class). //
+                withIgnoredFields("lines"). //
                 verify();
     }
 
@@ -76,6 +76,8 @@ public class DigitTest {
         Digit scaledDigit = digit.scale(moreLines);
 
         assertEquals(moreLines, scaledDigit.lines());
+        // equality on mocks works because Mockito adds its own equals method
+        // see https://stackoverflow.com/questions/19778592/prevent-stubbing-of-equals-method
     }
 
 }

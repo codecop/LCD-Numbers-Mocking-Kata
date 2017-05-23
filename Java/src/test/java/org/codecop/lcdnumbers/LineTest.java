@@ -32,6 +32,9 @@ public class LineTest {
                 verify();
     }
 
+    /** 
+     * @see ScalingRepeaterTest#shouldRepeatCharacter() for contract of stub.
+     */
     @Test
     public void shouldScaleMiddleCharacterHorizontally() {
         when(repeater.repeat(middle, scaling)).thenReturn(replaced);
