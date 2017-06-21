@@ -1,0 +1,21 @@
+{
+  "name": "lcd-numbers-mocking",
+  "description": "LCD Numbers Mocking Collaborators",
+  "version": "1.0.0",
+  "repository": {
+    "type": "hg",
+    "url": "https://bitbucket.org/pkofler/lcd-numbers-mocking-js-setup"
+  },
+  "license": "BSD-3-Clause",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "3.2.0",
+    "chai": "3.5.0",
+    "istanbul": "0.4.5",
+    "jslint": "0.10.3",
+    "jshint": "2.9.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
