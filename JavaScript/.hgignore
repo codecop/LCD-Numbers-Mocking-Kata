@@ -1,0 +1,15 @@
+syntax: glob
+
+node_modules/
+npm-debug.log
+coverage
+
+# Eclipse
+.project
+.settings
+.classpath
+
+# IDEA
+.idea
+*.iml
+*.iwr
