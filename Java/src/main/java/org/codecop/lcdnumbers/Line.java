@@ -3,13 +3,13 @@ package org.codecop.lcdnumbers;
 import java.util.Objects;
 
 /**
- * Value Object of a scaled LCD digit line.
+ * Value Object of an LCD digit line.
  */
-public final class ScaledLine {
+public class Line {
 
     private final String line;
 
-    public ScaledLine(String line) {
+    public Line(String line) {
         Objects.requireNonNull(line);
 
         this.line = line;

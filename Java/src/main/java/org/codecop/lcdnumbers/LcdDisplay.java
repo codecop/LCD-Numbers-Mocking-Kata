@@ -26,7 +26,7 @@ public class LcdDisplay {
         Objects.requireNonNull(scaling);
 
         List<ScalingDigit> digits = digitsSplitter.convert(number);
-        List<ScaledDigit> scaled = digitScaler.scale(digits, scaling);
+        List<Digit> scaled = digitScaler.scale(digits, scaling);
         return digitPrinter.render(scaled);
     }
 }
