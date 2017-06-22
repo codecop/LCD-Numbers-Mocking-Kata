@@ -6,38 +6,32 @@ import java.util.Objects;
 /**
  * Value Object of an LCD digit which can scale.
  */
-public class ScalingDigit {
-
-    private final List<ScalingLine> lines;
+public class ScalingDigit extends Digit {
 
     public ScalingDigit(int digit, Patterns patterns) {
-        this(patterns.of(digit));
+        super(patterns.of(digit));
     }
 
-    private ScalingDigit(List<ScalingLine> lines) {
-        Objects.requireNonNull(lines);
-        this.lines = lines;
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public List<ScalingLine> scalindLines() {
+        return (List) super.lines();
     }
 
-    public List<ScalingLine> lines() {
-        return lines;
-    }
-
-    public ScaledDigit scale(List<ScaledLine> scaledLines) {
+    public Digit scale(List<Line> scaledLines) {
         Objects.requireNonNull(scaledLines);
 
-        int linesCount = lines.size();
+        int linesCount = scalindLines().size();
         int scaledCount = scaledLines.size();
         if (scaledCount < linesCount) {
             throw new IllegalArgumentException("Scaled lines must be more than original ones: " + scaledCount + ">=" + linesCount);
         }
 
-        return new ScaledDigit(scaledLines);
+        return new Digit(scaledLines);
     }
 
     @Override
     public String toString() {
         // debug
-        return String.join("\n", lines.toArray(new String[0])) + "\n";
+        return String.join("\n", scalindLines().toArray(new String[0])) + "\n";
     }
 }
