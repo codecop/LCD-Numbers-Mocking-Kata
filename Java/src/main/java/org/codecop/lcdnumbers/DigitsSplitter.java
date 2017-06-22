@@ -20,7 +20,7 @@ public class DigitsSplitter {
         this.digitFactory = digitFactory;
     }
 
-    public List<Digit> convert(int number) {
+    public List<ScalingDigit> convert(int number) {
         List<Integer> numeralDigits = numeralSystem.digitsOf(number);
 
         return numeralDigits.stream(). //
