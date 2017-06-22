@@ -8,13 +8,10 @@ import java.util.Objects;
  */
 public final class ScaledDigit {
 
-    private final int digit;
     private final List<ScaledLine> lines;
 
-    ScaledDigit(int digit, List<ScaledLine> lines) {
+    ScaledDigit(List<ScaledLine> lines) {
         Objects.requireNonNull(lines);
-
-        this.digit = digit;
         this.lines = lines;
     }
 
@@ -23,21 +20,8 @@ public final class ScaledDigit {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (!(other instanceof ScaledDigit)) {
-            return false;
-        }
-        ScaledDigit that = (ScaledDigit) other;
-        return this.digit == that.digit;
-    }
-
-    @Override
-    public int hashCode() {
-        return digit;
-    }
-
-    @Override
     public String toString() {
-        return Integer.toString(digit);
+        // debug
+        return String.join("\n", lines.toArray(new String[0])) + "\n";
     }
 }
