@@ -4,22 +4,22 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Value Object of an LCD digit.
+ * Value Object of an LCD digit which can scale.
  */
-public class Digit {
+public class ScalingDigit {
 
-    private final List<Line> lines;
+    private final List<ScalingLine> lines;
 
-    public Digit(int digit, Patterns patterns) {
+    public ScalingDigit(int digit, Patterns patterns) {
         this(patterns.of(digit));
     }
 
-    private Digit(List<Line> lines) {
+    private ScalingDigit(List<ScalingLine> lines) {
         Objects.requireNonNull(lines);
         this.lines = lines;
     }
 
-    public List<Line> lines() {
+    public List<ScalingLine> lines() {
         return lines;
     }
 

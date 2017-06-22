@@ -15,7 +15,7 @@ public class DigitFactory {
         this.patterns = patterns;
     }
 
-    public Digit create(int digit) {
-        return new Digit(digit, patterns);
+    public ScalingDigit create(int digit) {
+        return new ScalingDigit(digit, patterns);
     }
 }
