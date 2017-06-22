@@ -6,15 +6,15 @@ package org.codecop.lcdnumbers;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
         final LcdDisplay lcdDisplay = new LcdDisplay( //
                 new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
                 new DigitScaler(new ScalingRepeater()), //
                 new DigitPrinter(new Zipper()));
 
         int number = Integer.parseInt(args[0]);
-        Scaling scaling = Scaling.of(Integer.parseInt(args[1]));
+        Scaling scaling = args.length > 1 ? Scaling.of(Integer.parseInt(args[1])) : Scaling.NONE;
 
-        System.out.println(lcdDisplay.toLcd(number, scaling));
+        System.out.print(lcdDisplay.toLcd(number, scaling));
     }
 }
