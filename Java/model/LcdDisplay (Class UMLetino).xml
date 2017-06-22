@@ -2,7 +2,7 @@
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>121</x><y>360</y><w>100</w><h>30</h></coordinates><panel_attributes>DigitPrinter
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>301</x><y>170</y><w>100</w><h>30</h></coordinates><panel_attributes>DigitFactory
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>411</x><y>260</y><w>100</w><h>40</h></coordinates><panel_attributes>&lt;&lt;value&gt;&gt;
-Digit
+ScalingDigit
 bg=#006000</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>221</x><y>450</y><w>100</w><h>40</h></coordinates><panel_attributes>&lt;&lt;generic&gt;&gt;
 Zipper
 bg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>291</x><y>350</y><w>100</w><h>40</h></coordinates><panel_attributes>&lt;&lt;generic&gt;&gt;
@@ -15,15 +15,23 @@ NumeralSystem
 --
 -base:int = 10
 bg=#cccccc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>581</x><y>250</y><w>100</w><h>60</h></coordinates><panel_attributes>&lt;&lt;value&gt;&gt;
-Line
+ScalingLine
 --
 -line: chars
 bg=#006000</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>31</x><y>260</y><w>100</w><h>30</h></coordinates><panel_attributes>LcdDisplay
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>111</x><y>170</y><w>100</w><h>30</h></coordinates><panel_attributes>DigitsSplitter
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>71</x><y>190</y><w>80</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>60;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>121</x><y>270</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>71</x><y>280</y><w>90</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>251</x><y>280</y><w>80</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>60;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>171</x><y>380</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>151</x><y>110</y><w>70</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>201</x><y>180</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>100;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>100</y><w>70</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>190</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
 creates</panel_attributes><additional_attributes>60;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>501</x><y>270</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
-m1=5..n</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>471</x><y>100</y><w>170</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
+m1=5</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>471</x><y>100</y><w>170</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
 m1=5
 templated lines</panel_attributes><additional_attributes>130;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>371</x><y>380</y><w>110</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
 defined by</panel_attributes><additional_attributes>60;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>301</x><y>260</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
-scales</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element></diagram>
+scales</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>461</x><y>360</y><w>100</w><h>40</h></coordinates><panel_attributes>&lt;&lt;value&gt;&gt;
+Digit
+bg=#006000</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>621</x><y>350</y><w>100</w><h>60</h></coordinates><panel_attributes>&lt;&lt;value&gt;&gt;
+Line
+--
+-line: chars
+bg=#006000</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>551</x><y>370</y><w>90</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+m1=5..n</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>461</x><y>290</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+creates</panel_attributes><additional_attributes>60;70;10;10</additional_attributes></element></diagram>
