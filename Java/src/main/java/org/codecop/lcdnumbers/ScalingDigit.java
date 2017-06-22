@@ -10,6 +10,9 @@ public class ScalingDigit extends Digit {
 
     public ScalingDigit(int digit, Patterns patterns) {
         super(patterns.of(digit));
+        if (scalindLines().size() != 5) {
+            throw new IllegalArgumentException("pattern must be 5 lines: " + scalindLines());
+        }
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
