@@ -19,27 +19,27 @@ public class DigitPrinter {
         this.zipper = zipper;
     }
 
-    public String render(List<Digit> digits) {
+    public String render(List<ScaledDigit> digits) {
         Objects.requireNonNull(digits);
 
-        List<List<Line>> linesOfAllDigits = linesOfAllDigits(digits);
+        List<List<ScaledLine>> linesOfAllDigits = linesOfAllDigits(digits);
         List<String> linesSideBySide = zip(linesOfAllDigits);
         return join(linesSideBySide);
     }
 
-    private List<List<Line>> linesOfAllDigits(List<Digit> digits) {
+    private List<List<ScaledLine>> linesOfAllDigits(List<ScaledDigit> digits) {
         return digits.stream(). //
-                map(Digit::lines). //
+                map(ScaledDigit::lines). //
                 collect(Collectors.toList());
     }
 
-    private List<String> zip(List<List<Line>> linesOfAllDigits) {
+    private List<String> zip(List<List<ScaledLine>> linesOfAllDigits) {
         return zipper.zip(linesOfAllDigits, this::concat);
     }
 
-    private String concat(List<Line> lines) {
+    private String concat(List<ScaledLine> lines) {
         return lines.stream(). //
-                map(Line::toString). //
+                map(ScaledLine::toString). //
                 collect(Collectors.joining());
     }
 

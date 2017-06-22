@@ -11,16 +11,19 @@ public final class Line {
 
     public Line(String line) {
         Objects.requireNonNull(line);
+        if (line.length() != 3) {
+            throw new IllegalArgumentException("pattern line must be 3 characters: " + line);
+        }
 
         this.line = line;
     }
 
-    public Line scaleHorizontal(ScalingRepeater repeater, Scaling scaling) {
+    public ScaledLine scaleHorizontal(ScalingRepeater repeater, Scaling scaling) {
         Objects.requireNonNull(repeater);
         Objects.requireNonNull(scaling);
 
         char[] chars = line.toCharArray();
-        return new Line(chars[0] + repeater.repeat(chars[1], scaling) + chars[2]);
+        return new ScaledLine(chars[0] + repeater.repeat(chars[1], scaling) + chars[2]);
     }
 
     @Override
