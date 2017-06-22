@@ -6,19 +6,16 @@ import java.util.Objects;
 /**
  * Value Object of an LCD digit.
  */
-public final class Digit {
+public class Digit {
 
-    private final int digit;
     private final List<Line> lines;
 
     public Digit(int digit, Patterns patterns) {
-        this(digit, patterns.of(digit));
+        this(patterns.of(digit));
     }
 
-    private Digit(int digit, List<Line> lines) {
+    private Digit(List<Line> lines) {
         Objects.requireNonNull(lines);
-
-        this.digit = digit;
         this.lines = lines;
     }
 
@@ -35,25 +32,12 @@ public final class Digit {
             throw new IllegalArgumentException("Scaled lines must be more than original ones: " + scaledCount + ">=" + linesCount);
         }
 
-        return new ScaledDigit(digit, scaledLines);
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (!(other instanceof Digit)) {
-            return false;
-        }
-        Digit that = (Digit) other;
-        return this.digit == that.digit;
-    }
-
-    @Override
-    public int hashCode() {
-        return digit;
+        return new ScaledDigit(scaledLines);
     }
 
     @Override
     public String toString() {
-        return Integer.toString(digit);
+        // debug
+        return String.join("\n", lines.toArray(new String[0])) + "\n";
     }
 }

@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Value Object of an LCD digit line.
  */
-public final class Line {
+public class Line {
 
     private final String line;
 
@@ -27,21 +27,8 @@ public final class Line {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (!(other instanceof Line)) {
-            return false;
-        }
-        Line that = (Line) other;
-        return this.line.equals(that.line);
-    }
-
-    @Override
-    public int hashCode() {
-        return line.hashCode();
-    }
-
-    @Override
     public String toString() {
+        // debug
         return line;
     }
 }

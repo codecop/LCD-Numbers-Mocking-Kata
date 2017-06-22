@@ -16,20 +16,6 @@ public final class ScaledLine {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (!(other instanceof ScaledLine)) {
-            return false;
-        }
-        ScaledLine that = (ScaledLine) other;
-        return this.line.equals(that.line);
-    }
-
-    @Override
-    public int hashCode() {
-        return line.hashCode();
-    }
-
-    @Override
     public String toString() {
         return line;
     }

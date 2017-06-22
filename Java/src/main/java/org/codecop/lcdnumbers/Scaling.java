@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * The scale factor value.
  */
-public final class Scaling {
+public class Scaling {
 
     public static final Scaling NONE = new Scaling(1);
     public static final Scaling TWO = new Scaling(2);
@@ -24,10 +24,6 @@ public final class Scaling {
         this.times = times;
     }
 
-    public boolean none() {
-        return times == 1;
-    }
-
     public void times(Runnable block) {
         Objects.requireNonNull(block);
 
@@ -37,21 +33,8 @@ public final class Scaling {
     }
 
     @Override
-    public boolean equals(Object other) {
-        if (!(other instanceof Scaling)) {
-            return false;
-        }
-        Scaling that = (Scaling) other;
-        return this.times == that.times;
-    }
-
-    @Override
-    public int hashCode() {
-        return times;
-    }
-
-    @Override
     public String toString() {
+        // debug
         return Integer.toString(times);
     }
 }
