@@ -26,7 +26,7 @@ public final class Digit {
         return lines;
     }
 
-    public Digit scale(List<Line> scaledLines) {
+    public ScaledDigit scale(List<ScaledLine> scaledLines) {
         Objects.requireNonNull(scaledLines);
 
         int linesCount = lines.size();
@@ -35,7 +35,7 @@ public final class Digit {
             throw new IllegalArgumentException("Scaled lines must be more than original ones: " + scaledCount + ">=" + linesCount);
         }
 
-        return new Digit(digit, scaledLines);
+        return new ScaledDigit(digit, scaledLines);
     }
 
     @Override
