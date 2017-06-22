@@ -53,7 +53,7 @@ and stub all collaborators, even the most simple classes like `Scaling` and `Lin
 
 1. Start testing the simple units like `Scaling`, `Line` and `Digit`.
    These units have a single (interesting) method with a single collaborator.
-1. Work on `DigitPrinter` and `DigitScaler`. Both have more logic, but still only
+1. Work on `DigitScaler` and `DigitPrinter`. Both have more logic, but still only
    a single collaborator.
 1. Things are getting more complicated with `DigitsSplitter`.
 1. Finally go for `LcdDisplay` which has three collaborators.
