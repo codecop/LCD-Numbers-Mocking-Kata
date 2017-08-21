@@ -5,8 +5,7 @@ exports = typeof window !== "undefined" && window !== null ? window : global;
  */
 function Scaling(times) {
     if (times <= 0) {
-        // TODO JS exception
-        throw new IllegalArgumentException("scaling factor must be >= 1");
+        throw new RangeError("scaling factor must be >= 1");
     }
 
     this.none = function() {

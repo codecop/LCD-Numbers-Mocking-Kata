@@ -1,4 +1,4 @@
-exports = typeof window !== "undefined" && window !== null ? window : global;
+exports = typeof window !== 'undefined' && window !== null ? window : global;
 
 /**
  * Value Object of an LCD digit.
@@ -19,16 +19,16 @@ function Digit(digit, patternsOf) {
         var linesCount = lines.length;
         var scaledCount = scaledLines.length;
         if (scaledCount < linesCount) {
-            throw new IllegalArgumentException("Scaled lines must be more than original ones: " + scaledCount + ">=" + linesCount);
+            throw new RangeError('Scaled lines must be more than original ones: ' + scaledCount + '>=' + linesCount);
         }
 
         return new Digit(digit, function() { return scaledLines; });
     }
 
     this.toString = function() {
-        return "" + digit;
+        return '' + digit;
     };
 
-};
+}
 
 exports.Digit = Digit;

@@ -3,6 +3,7 @@
 
 var chai = require('chai');
 var should = chai.should();
+var expect = chai.expect;
 var sinon = require('sinon');
 
 require('../src/scaling');
@@ -33,6 +34,12 @@ describe('Scaling', function () {
         Scaling.NONE.times(callback);
 
         callback.callCount.should.equal(1);
+    });
+
+    it('should fail on non positive scale values', function () {
+        expect(function() {
+            Scaling.of(0);
+        }).to.throw(RangeError);
     });
 
 });

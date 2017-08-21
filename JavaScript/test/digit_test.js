@@ -10,9 +10,9 @@ require('../src/digit');
 
 describe('Digit', function () {
 
-    var originalLine;
-    var anotherLine;
-    var secondLine;
+    var originalLine = { id: 1 }; // fakes
+    var anotherLine = { id: 2 };
+    var secondLine = { id: 3 };
 
     var digit;
 
@@ -39,13 +39,12 @@ describe('Digit', function () {
         scaledDigit.lines().should.deep.equal(moreLines);
     });
 
-// TODO error
-//    it('should fail when scaling with fewer lines', function () {
-//        var fewerLines = [ ];
-//
-//        expect(function() {
-//            digit.scale(fewerLines);
-//        }).to.throw(IllegalArgumentException);
-//    });
+    it('should fail when scaling with fewer lines', function () {
+        var fewerLines = [ ];
+
+        expect(function() {
+            digit.scale(fewerLines);
+        }).to.throw(RangeError);
+    });
 
 });
