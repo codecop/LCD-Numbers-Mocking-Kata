@@ -3,44 +3,36 @@
 
 var chai = require('chai');
 var should = chai.should();
-// var expect = chai.expect;
-// var assert = chai.assert;
+var sinon = require('sinon');
 
 require('../src/scaling');
-console.log(Scaling);
 
 describe('Scaling', function () {
+    var callback; // mock
+
+    beforeEach(function () {
+        callback = sinon.spy();
+    });
 
     it('should report if scaling', function () {
         Scaling.of(1).none().should.equal(true);
         Scaling.of(2).none().should.equal(false);
     });
 
-//    @Test
-//    public void shouldScaleAccordingFactor() {
-//        int factor = 3;
-//        Scaling threeTimes = Scaling.of(factor);
-//
-//        threeTimes.times(block);
-//
-//        verify(block, times(factor)).run();
-//    }
-//
-//    @Test
-//    public void shouldNotScaleForFactorOne() {
-//        // tests constant to be 1
-//        Scaling.NONE.times(block);
-//
-//        verify(block, times(1)).run();
-//    }
+    it('should scale according factor', function () {
+        var factor = 3;
+        var threeTimes = Scaling.of(factor);
+
+        threeTimes.times(callback);
+
+        callback.callCount.should.equal(factor);
+    });
+
+    it('should not scale for factor one', function () {
+        // tests constant to be 1
+        Scaling.NONE.times(callback);
+
+        callback.callCount.should.equal(1);
+    });
 
 });
-
-
-//    @Mock
-//    Runnable block; // mock
-
-//    @Test
-//    public void equalsContract() {
-//        EqualsVerifier.forClass(Scaling.class).verify();
-//    }

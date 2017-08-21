@@ -22,19 +22,9 @@ function Scaling(times) {
         }
     }
 
-//    @Override
-//    public boolean equals(Object other) {
-//        if (!(other instanceof Scaling)) {
-//            return false;
-//        }
-//        Scaling that = (Scaling) other;
-//        return this.times == that.times;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return Integer.toString(times);
-//    }}
+    this.toString = function() {
+        return "" + times;
+    };
 
 }
 
