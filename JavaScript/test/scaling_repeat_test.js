@@ -1,4 +1,4 @@
-/* globals describe, it, expect, beforeEach, afterEach, Scaling */
+/* globals describe, it, scalingRepeat, Scaling */
 'use strict';
 
 var chai = require('chai');
