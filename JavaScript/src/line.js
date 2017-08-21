@@ -17,6 +17,6 @@ function Line(line) {
         return line;
     };
 
-};
+}
 
 exports.Line = Line;
