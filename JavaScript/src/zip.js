@@ -17,7 +17,7 @@ exports.zip = function(collections, combine) {
     // TODO Objects.requireNonNull(combine);
 
     return zip(collections).map(function(array) {
-        return array.reduce(combine);
+        return combine(array);
     });
 
 };
