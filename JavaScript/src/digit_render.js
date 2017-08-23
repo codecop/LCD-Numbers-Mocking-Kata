@@ -3,7 +3,7 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
 /**
  * Appends lines next to each other and adds line breaks.
  */
-exports.DigitPrinter = function(zip) {
+exports.createDigitRender = function(zip) {
 
     var NEWLINE = "\n";
 
@@ -26,7 +26,7 @@ exports.DigitPrinter = function(zip) {
         return lines.reduce(function (a, b) { return a + NEWLINE + b ; }) + NEWLINE;
     }
 
-    this.render = function(digits) {
+    return function(digits) {
         // TODO Objects.requireNonNull(digits);
 
         var _linesOfAllDigits = linesOfAllDigits(digits);
