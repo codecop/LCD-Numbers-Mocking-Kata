@@ -1,11 +1,11 @@
-/* globals describe, beforeEach, it, zip, createDigitRender */
+/* globals describe, beforeEach, it, zip, createPrintDigit, Line */
 'use strict';
 
 var chai = require('chai');
 var should = chai.should();
 
 require('../src/line');
-require('../src/digit_render');
+require('../src/print_digit');
 require('../src/zip');
 
 function digitFrom(line1, line2) {
@@ -13,13 +13,13 @@ function digitFrom(line1, line2) {
     return { lines: function() { return lines; }}; // stub Digit
 }
 
-describe('digitRender', function () {
+describe('printDigit', function () {
 
-    var digitRenter;
+    var printDigit;
 
     beforeEach(function() {
         // Zip feels technical, so it is rather a helper than a real collaborator.
-        digitRenter = createDigitRender(zip);
+        printDigit = createPrintDigit(zip);
     });
 
     it('should render digits side by side', function () {
@@ -28,7 +28,7 @@ describe('digitRender', function () {
         var two = digitFrom('B1', //
                             'B2');
 
-        var display = digitRenter([ one, two ]);
+        var display = printDigit([ one, two ]);
 
         display.should.equal('A1B1\n' + //
                              'A2B2\n');
