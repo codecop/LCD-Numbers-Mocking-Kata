@@ -1,5 +1,7 @@
 exports = typeof window !== "undefined" && window !== null ? window : global;
 
+// Java class Scaling
+
 /**
  * The scale factor value.
  */
