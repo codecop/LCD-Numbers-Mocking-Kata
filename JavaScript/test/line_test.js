@@ -21,9 +21,6 @@ describe('Line', function () {
         scaling = {};
     });
 
-    /**
-     * @see "scaling_repeat_test#should repeat character" for contract of stub.
-     */
     it('should scale middle character horizontally', function () {
         repeat = sinon.stub().withArgs(middle, scaling).returns(replaced);
 
