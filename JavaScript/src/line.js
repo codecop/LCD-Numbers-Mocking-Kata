@@ -1,5 +1,7 @@
 exports = typeof window !== "undefined" && window !== null ? window : global;
 
+// Java class Line
+
 /**
  * Value Object of an LCD digit line.
  */
