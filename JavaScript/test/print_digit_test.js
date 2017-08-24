@@ -1,4 +1,4 @@
-/* globals describe, beforeEach, it, zip, createPrintDigit, Line */
+/* globals describe, beforeEach, it, zipWithCombine, createPrintDigit, Line */
 'use strict';
 
 var chai = require('chai');
@@ -6,7 +6,7 @@ var should = chai.should();
 
 require('../src/line');
 require('../src/print_digit');
-require('../src/zip');
+require('../src/zip_with_combine');
 
 function digitFrom(line1, line2) {
     var lines = [ new Line(line1), new Line(line2) ];
@@ -19,7 +19,7 @@ describe('printDigit', function () {
 
     beforeEach(function() {
         // Zip feels technical, so it is rather a helper than a real collaborator.
-        printDigit = createPrintDigit(zip);
+        printDigit = createPrintDigit(zipWithCombine);
     });
 
     it('should render digits side by side', function () {
