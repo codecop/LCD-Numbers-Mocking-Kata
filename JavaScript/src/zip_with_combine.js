@@ -1,5 +1,7 @@
 exports = typeof window !== "undefined" && window !== null ? window : global;
 
+// Java class Zipper
+
 function zip(arrays) {
     // see https://stackoverflow.com/a/10284006/104143
     return arrays[0].map(function(_, i) {
@@ -12,12 +14,15 @@ function zip(arrays) {
 /**
  * Zip joins elements of collections element wise, i.e. all first elements are joined and so on.
  */
-exports.zip = function(collections, combine) {
+exports.zipWithCombine = function(collections, combine) {
     // TODO Objects.requireNonNull(collections);
     // TODO Objects.requireNonNull(combine);
 
-    return zip(collections).map(function(array) {
-        return combine(array);
-    });
+    if (collections.length === 0) {
+        return [];
+    }
+
+    var zipped = zip(collections);
+    return zipped.map(combine);
 
 };
