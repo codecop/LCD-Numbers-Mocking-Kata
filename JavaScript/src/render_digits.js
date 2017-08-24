@@ -1,9 +1,11 @@
 exports = typeof window !== 'undefined' && window !== null ? window : global;
 
+// Java class DigitPrinter
+
 /**
  * Appends lines next to each other and adds line breaks.
  */
-exports.createPrintDigit = function(zip) {
+exports.createRenderDigits = function(zip) {
 
     var NEWLINE = "\n";
 
