@@ -7,6 +7,7 @@ var should = chai.should();
 require('../src/to_lcd');
     require('../src/convert_number');
         require('../src/digits_of');
+            require('../src/digit');
         require('../src/create_digit');
                 require('../src/line');
             require('../src/patterns_of');
@@ -42,32 +43,31 @@ describe('to_lcd', function () {
                          "    -  - \n");
     });
 
-//    @Test
-//    public void shouldPrintLcdSizeTwo() {
-//        String lcd = lcdDisplay.toLcd(123, Scaling.TWO);
-//        assertEquals("     --  -- \n" + //
-//                     "   |   |   |\n" + //
-//                     "   |   |   |\n" + //
-//                     "     --  -- \n" + //
-//                     "   ||      |\n" + //
-//                     "   ||      |\n" + //
-//                     "     --  -- \n", lcd);
-//    }
-//
-//    @Test
-//    public void shouldPrintLcdSizeThree() {
-//        String lcd = lcdDisplay.toLcd(123, Scaling.of(3));
-//        assertEquals("      ---  --- \n" + //
-//                     "    |    |    |\n" + //
-//                     "    |    |    |\n" + //
-//                     "    |    |    |\n" + //
-//                     "      ---  --- \n" + //
-//                     "    ||        |\n" + //
-//                     "    ||        |\n" + //
-//                     "    ||        |\n" + //
-//                     "      ---  --- \n", lcd);
-//    }
-//
+    it('should print LCD size two', function () {
+        var lcd = toLcd(123, Scaling.TWO);
+        lcd.should.equal("     --  -- \n" + //
+                         "   |   |   |\n" + //
+                         "   |   |   |\n" + //
+                         "     --  -- \n" + //
+                         "   ||      |\n" + //
+                         "   ||      |\n" + //
+                         "     --  -- \n");
+    });
+
+    it('should print LCD size three', function () {
+        var lcd = toLcd(123, Scaling.of(3));
+        lcd.should.equal("      ---  --- \n" + //
+                         "    |    |    |\n" + //
+                         "    |    |    |\n" + //
+                         "    |    |    |\n" + //
+                         "      ---  --- \n" + //
+                         "    ||        |\n" + //
+                         "    ||        |\n" + //
+                         "    ||        |\n" + //
+                         "      ---  --- \n");
+    });
+
+
 //    @Test @Ignore("can not find file in kata project")
 //    public void shouldPrintAllNumbersLcdSizeThree() throws IOException, URISyntaxException {
 //        String lcd = lcdDisplay.toLcd(1234567890, Scaling.of(3));

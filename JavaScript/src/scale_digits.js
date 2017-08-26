@@ -21,7 +21,7 @@ exports.createScaleDigits = function(scalingRepeat) {
 
         var oddLine = true;
         var line;
-        for (line in digit.lines()) {
+        digit.lines().forEach(function(line) {
             var scaledLine = line.scaleHorizontal(scalingRepeat, scaling);
             if (oddLine) {
                 scaled.push(scaledLine);
@@ -29,7 +29,7 @@ exports.createScaleDigits = function(scalingRepeat) {
                 scaled += scalingRepeat(scaledLine, scaling);
             }
             oddLine = !oddLine;
-        }
+        });
 
         return digit.scale(scaled);
     }
