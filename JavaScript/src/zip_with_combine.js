@@ -22,7 +22,5 @@ exports.zipWithCombine = function(collections, combine) {
         return [];
     }
 
-    var zipped = zip(collections);
-    return zipped.map(combine);
-
+    return zip(collections).map(combine);
 };

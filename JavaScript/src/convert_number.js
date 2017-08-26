@@ -11,8 +11,7 @@ exports.createConvertNumber = function(digitsOf, createDigit) {
     // TODO Objects.requireNonNull(createDigit);
 
     return function(number) {
-        var numeralDigits = digitsOf(number);
-        return numeralDigits.map(createDigit);
+        return digitsOf(number).map(createDigit);
     };
 
 };
