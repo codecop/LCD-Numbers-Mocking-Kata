@@ -11,8 +11,12 @@ exports.createRenderDigits = function(zip) {
 
     // TODO Objects.requireNonNull(zip);
 
+    function linesOfDigigit(digit) {
+        return digit.lines();
+    }
+
     function linesOfAllDigits(digits) {
-        return digits.map(function(digit) { return digit.lines(); });
+        return digits.map(linesOfDigigit);
     }
 
     function doZip(linesOfAllDigits) {
@@ -31,8 +35,8 @@ exports.createRenderDigits = function(zip) {
     return function(digits) {
         // TODO Objects.requireNonNull(digits);
 
-        var _linesOfAllDigits = linesOfAllDigits(digits);
-        var linesSideBySide = doZip(_linesOfAllDigits);
+        var allLines = linesOfAllDigits(digits);
+        var linesSideBySide = doZip(allLines);
         return join(linesSideBySide);
     };
 

@@ -19,5 +19,4 @@ exports.scalingRepeat = function(element, scaling) {
     } else {
         return elements;
     }
-
 };

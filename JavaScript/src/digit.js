@@ -8,6 +8,7 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
 function Digit(digit, patternsOf) {
     // TODO Objects.requireNonNull(digit);
     // TODO Objects.requireNonNull(patternsOf);
+
     var lines = patternsOf(digit);
     // TODO Objects.requireNonNull(lines);
 
@@ -24,7 +25,11 @@ function Digit(digit, patternsOf) {
             throw new RangeError('Scaled lines must be more than original ones: ' + scaledCount + '>=' + linesCount);
         }
 
-        return new Digit(digit, function() { return scaledLines; });
+        function patternOfScaledLines() {
+            return scaledLines;
+        }
+
+        return new Digit(digit, patternOfScaledLines);
     }
 
     this.toString = function() {

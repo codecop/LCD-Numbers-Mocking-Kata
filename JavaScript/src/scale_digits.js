@@ -20,7 +20,8 @@ exports.createScaleDigits = function(scalingRepeat) {
         var scaled = [];
 
         var oddLine = true;
-        for (Line line : digit.lines()) {
+        var line;
+        for (line in digit.lines()) {
             var scaledLine = line.scaleHorizontal(scalingRepeat, scaling);
             if (oddLine) {
                 scaled.push(scaledLine);
@@ -36,6 +37,11 @@ exports.createScaleDigits = function(scalingRepeat) {
     return function(digits, scaling) {
         // TODO Objects.requireNonNull(digits);
         // TODO Objects.requireNonNull(scaling);
-        return digits.map(function(d) { return scale(d, scaling); });
+
+        function scaleDigit(digit) {
+            return scale(digit, scaling);
+        }
+
+        return digits.map(scaleDigit);
     };
 ];
