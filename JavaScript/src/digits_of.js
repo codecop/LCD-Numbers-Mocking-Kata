@@ -22,7 +22,7 @@ exports.createDigitsOf = function() {
         var remainder = value;
         while (remainder > 0) {
             digits.push(remainder % base);
-            remainder /= base;
+            remainder = Math.floor(remainder / base);
         }
         digits.reverse(digits);
 
