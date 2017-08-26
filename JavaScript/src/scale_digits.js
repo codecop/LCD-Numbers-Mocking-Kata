@@ -44,4 +44,4 @@ exports.createScaleDigits = function(scalingRepeat) {
 
         return digits.map(scaleDigit);
     };
-];
+};
