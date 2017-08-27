@@ -3,6 +3,7 @@
 
 var chai = require('chai');
 var should = chai.should();
+var fs = require('fs');
 
 require('../src/to_lcd');
     require('../src/convert_number');
@@ -20,6 +21,10 @@ require('../src/to_lcd');
 
 require('../src/scaling');
 
+function read(name) {
+    return fs.readFileSync('./test/resources/' + name, 'UTF-8').replace(/(?:\r\n|\r)/g, '\n');
+}
+
 describe('to_lcd', function () {
     var toLcd;
 
@@ -36,51 +41,41 @@ describe('to_lcd', function () {
 
     it('should print LCD size one', function () {
         var lcd = toLcd(123, Scaling.NONE);
-        lcd.should.equal("    -  - \n" + //
-                         "  |  |  |\n" + //
-                         "    -  - \n" + //
-                         "  ||    |\n" + //
-                         "    -  - \n");
+        lcd.should.equal('    -  - \n' + //
+                         '  |  |  |\n' + //
+                         '    -  - \n' + //
+                         '  ||    |\n' + //
+                         '    -  - \n');
     });
 
     it('should print LCD size two', function () {
         var lcd = toLcd(123, Scaling.TWO);
-        lcd.should.equal("     --  -- \n" + //
-                         "   |   |   |\n" + //
-                         "   |   |   |\n" + //
-                         "     --  -- \n" + //
-                         "   ||      |\n" + //
-                         "   ||      |\n" + //
-                         "     --  -- \n");
+        lcd.should.equal('     --  -- \n' + //
+                         '   |   |   |\n' + //
+                         '   |   |   |\n' + //
+                         '     --  -- \n' + //
+                         '   ||      |\n' + //
+                         '   ||      |\n' + //
+                         '     --  -- \n');
     });
 
     it('should print LCD size three', function () {
         var lcd = toLcd(123, Scaling.of(3));
-        lcd.should.equal("      ---  --- \n" + //
-                         "    |    |    |\n" + //
-                         "    |    |    |\n" + //
-                         "    |    |    |\n" + //
-                         "      ---  --- \n" + //
-                         "    ||        |\n" + //
-                         "    ||        |\n" + //
-                         "    ||        |\n" + //
-                         "      ---  --- \n");
+        lcd.should.equal('      ---  --- \n' + //
+                         '    |    |    |\n' + //
+                         '    |    |    |\n' + //
+                         '    |    |    |\n' + //
+                         '      ---  --- \n' + //
+                         '    ||        |\n' + //
+                         '    ||        |\n' + //
+                         '    ||        |\n' + //
+                         '      ---  --- \n');
     });
 
-
-//    @Test @Ignore("can not find file in kata project")
-//    public void shouldPrintAllNumbersLcdSizeThree() throws IOException, URISyntaxException {
-//        String lcd = lcdDisplay.toLcd(1234567890, Scaling.of(3));
-//        String expected = read("/numbers grid 5x9 - size 3.txt");
-//        assertEquals(expected, lcd);
-//    }
-//
-//    private String read(String name) throws IOException, URISyntaxException {
-//        URL classpathResource = getClass().getResource(name);
-//        Path fileSystemResource = Paths.get(classpathResource.toURI());
-//        return Files.readAllLines(fileSystemResource). //
-//                stream(). //
-//                collect(Collectors.joining("\n", "", "\n"));
-//    }
+    it('should print all numbers LCD size three', function () {
+        var lcd = toLcd(1234567890, Scaling.of(3));
+        var expected = read('/numbers grid 5x9 - size 3.txt');
+        lcd.should.equal(expected);
+    });
 
 });
