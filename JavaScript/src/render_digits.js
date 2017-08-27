@@ -2,12 +2,12 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
 
 // Java class DigitPrinter
 
+var NEWLINE = "\n";
+
 /**
- * Appends lines next to each other and adds line breaks.
+ * Appends digits' lines next to each other and adds line breaks.
  */
 exports.createRenderDigits = function(zip) {
-
-    var NEWLINE = "\n";
 
     // TODO Objects.requireNonNull(zip);
 
@@ -24,12 +24,17 @@ exports.createRenderDigits = function(zip) {
     }
 
     function concat(lines) {
-        return lines.map(function(line) { return line.toString(); }).
-                reduce(function (a, b) { return a + b; });
+        return lines.map(function(line) {
+            return line.toString();
+        }).reduce(function(a, b) {
+            return a + b;
+        });
     }
 
     function join(lines) {
-        return lines.reduce(function (a, b) { return a + NEWLINE + b ; }) + NEWLINE;
+        return lines.reduce(function(a, b) {
+            return a + NEWLINE + b;
+        }) + NEWLINE;
     }
 
     return function(digits) {

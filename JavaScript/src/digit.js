@@ -3,9 +3,10 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
 // Java class Digit
 
 /**
- * Value Object of an LCD digit.
+ * Value object of an LCD digit.
  */
 function Digit(digit, patternsOf) {
+
     // TODO Objects.requireNonNull(digit);
     // TODO Objects.requireNonNull(patternsOf);
 

@@ -1,9 +1,9 @@
-exports = typeof window !== "undefined" && window !== null ? window : global;
+exports = typeof window !== 'undefined' && window !== null ? window : global;
 
 // Java class ScalingRepeater
 
 /**
- * Repeat objects and characters according to scaling.
+ * Repeats objects and characters according to scaling.
  */
 exports.scalingRepeat = function(element, scaling) {
     // TODO Objects.requireNonNull(element);

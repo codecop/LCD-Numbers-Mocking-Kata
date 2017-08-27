@@ -8,12 +8,11 @@ var sinon = require('sinon');
 
 require('../src/digit');
 
-describe('Digit', function () {
+var originalLine = { id: 1 }; // fakes
+var anotherLine = { id: 2 };
+var secondLine = { id: 3 };
 
-    var originalLine = { id: 1 }; // fakes
-    var anotherLine = { id: 2 };
-    var secondLine = { id: 3 };
-
+describe('Digit', function() {
     var digit;
 
     beforeEach(function() {
@@ -23,7 +22,7 @@ describe('Digit', function () {
         digit = new Digit(1, patternsOf);
     });
 
-    it('should replace lines when scaling with same size', function () {
+    it('should replace lines when scaling with same size', function() {
         var sameLines = [ anotherLine ];
 
         var scaledDigit = digit.scale(sameLines);
@@ -31,16 +30,16 @@ describe('Digit', function () {
         scaledDigit.lines().should.deep.equal(sameLines);
     });
 
-    it('should replace lines when scaling with more size', function () {
-        var moreLines = [ anotherLine, secondLine ];
+    it('should replace lines when scaling with more size', function() {
+        var moreLines = [anotherLine, secondLine];
 
         var scaledDigit = digit.scale(moreLines);
 
         scaledDigit.lines().should.deep.equal(moreLines);
     });
 
-    it('should fail when scaling with fewer lines', function () {
-        var fewerLines = [ ];
+    it('should fail when scaling with fewer lines', function() {
+        var fewerLines = [];
 
         expect(function() {
             digit.scale(fewerLines);

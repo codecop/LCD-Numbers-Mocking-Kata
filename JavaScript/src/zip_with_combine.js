@@ -1,4 +1,4 @@
-exports = typeof window !== "undefined" && window !== null ? window : global;
+exports = typeof window !== 'undefined' && window !== null ? window : global;
 
 // Java class Zipper
 
@@ -15,6 +15,7 @@ function zip(arrays) {
  * Zip joins elements of collections element wise, i.e. all first elements are joined and so on.
  */
 exports.zipWithCombine = function(collections, combine) {
+
     // TODO Objects.requireNonNull(collections);
     // TODO Objects.requireNonNull(combine);
 

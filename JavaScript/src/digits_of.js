@@ -3,16 +3,16 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
 // Java class NumeralSystem
 
 /**
- * Splits a number into its digits according to its numeral system, e.g. Decimal System.
+ * Splits a number into its digits according to its base, e.g. Decimal System.
  */
 exports.createDigitsOf = function() {
 
     var base = 10;
-    if (base < 2) {
-        throw new RangeError('Smallest base is binary; base=' + base);
-    }
+    // if (base < 2) {
+    //     throw new RangeError('Smallest base is binary; base=' + base);
+    // }
 
-    return function (value) {
+    return function(value) {
         if (value < 0) {
             throw new RangeError('negative number ' + value);
         }
@@ -28,4 +28,5 @@ exports.createDigitsOf = function() {
 
         return digits;
     };
+
 };

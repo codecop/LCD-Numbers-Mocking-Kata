@@ -1,4 +1,4 @@
-exports = typeof window !== "undefined" && window !== null ? window : global;
+exports = typeof window !== 'undefined' && window !== null ? window : global;
 
 // Java class Scaling
 
@@ -7,7 +7,7 @@ exports = typeof window !== "undefined" && window !== null ? window : global;
  */
 function Scaling(times) {
     if (times <= 0) {
-        throw new RangeError("scaling factor must be >= 1");
+        throw new RangeError('scaling factor must be >= 1');
     }
 
     this.none = function() {
@@ -24,7 +24,7 @@ function Scaling(times) {
     }
 
     this.toString = function() {
-        return "" + times;
+        return '' + times;
     };
 
 }

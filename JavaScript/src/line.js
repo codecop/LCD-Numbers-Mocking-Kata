@@ -1,4 +1,4 @@
-exports = typeof window !== "undefined" && window !== null ? window : global;
+exports = typeof window !== 'undefined' && window !== null ? window : global;
 
 // Java class Line
 
@@ -6,6 +6,7 @@ exports = typeof window !== "undefined" && window !== null ? window : global;
  * Value Object of an LCD digit line.
  */
 function Line(line) {
+    
     // TODO Objects.requireNonNull(line);
 
     this.scaleHorizontal = function(repeat, scaling) {

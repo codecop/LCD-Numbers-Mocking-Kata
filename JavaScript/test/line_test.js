@@ -12,8 +12,7 @@ var middle = 'b';
 var right = 'c';
 var replaced = 'bb';
 
-describe('Line', function () {
-
+describe('Line', function() {
     var scaling; // fake object
     var repeat; // stub function
 
@@ -21,7 +20,7 @@ describe('Line', function () {
         scaling = {};
     });
 
-    it('should scale middle character horizontally', function () {
+    it('should scale middle character horizontally', function() {
         repeat = sinon.stub().withArgs(middle, scaling).returns(replaced);
 
         var line = new Line(left + middle + right);

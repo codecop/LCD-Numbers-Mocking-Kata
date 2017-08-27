@@ -1,4 +1,4 @@
-exports = typeof window !== "undefined" && window !== null ? window : global;
+exports = typeof window !== 'undefined' && window !== null ? window : global;
 
 // Java class DigitScaler
 
@@ -44,4 +44,5 @@ exports.createScaleDigits = function(scalingRepeat) {
 
         return digits.map(scaleDigit);
     };
+
 };

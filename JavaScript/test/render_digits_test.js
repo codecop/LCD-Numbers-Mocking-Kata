@@ -8,13 +8,16 @@ require('../src/line');
 require('../src/zip_with_combine');
 require('../src/render_digits');
 
-function digitFrom(line1, line2) {
+function digitFrom(line1, line2) { // stub Digit
     var lines = [ new Line(line1), new Line(line2) ];
-    return { lines: function() { return lines; }}; // stub Digit
+    return {
+        lines : function() {
+            return lines;
+        }
+    };
 }
 
-describe('renderDigits', function () {
-
+describe('renderDigits', function() {
     var printDigit;
 
     beforeEach(function() {
@@ -22,7 +25,7 @@ describe('renderDigits', function () {
         printDigit = createRenderDigits(zipWithCombine);
     });
 
-    it('should render digits side by side', function () {
+    it('should render digits side by side', function() {
         var one = digitFrom('A1', //
                             'A2');
         var two = digitFrom('B1', //
