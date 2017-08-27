@@ -24,7 +24,7 @@ function Scaling(times) {
     };
 
     this.toString = function() {
-        return '' + times;
+        return String(times);
     };
 
 }
