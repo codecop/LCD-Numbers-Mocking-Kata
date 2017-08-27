@@ -16,17 +16,16 @@ require('./zip_with_combine');
 require('./scaling');
 
 /**
- * Fake client code. Run this script to see LCD Numbers working:
+ * Fake client code. Run this script to see LCD Numbers working: 
  * <code>node index.js 12345 2</code>.
  */
 var toLcd = createToLcd( //
-            // new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
-            createConvertNumber(createDigitsOf(), createCreateDigit(patternsOf)), //
-            // new DigitScaler(new ScalingRepeater()), //
-            createScaleDigits(scalingRepeat),
-            // new DigitPrinter(new Zipper()));
-            createRenderDigits(zipWithCombine)
-        );
+    // new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
+    createConvertNumber(createDigitsOf(), createCreateDigit(patternsOf)), //
+    // new DigitScaler(new ScalingRepeater()), //
+    createScaleDigits(scalingRepeat),
+    // new DigitPrinter(new Zipper()));
+    createRenderDigits(zipWithCombine));
 
 var args = process.argv;
 args.shift(); // node

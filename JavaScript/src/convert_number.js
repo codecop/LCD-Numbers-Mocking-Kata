@@ -1,9 +1,9 @@
-exports = typeof window !== "undefined" && window !== null ? window : global;
+exports = typeof window !== 'undefined' && window !== null ? window : global;
 
-// Java class DigitsSplitter
+// was Java class DigitsSplitter
 
 /**
- * Splits into digits and converts digits to LCD digits.
+ * Splits number into digits and converts each digit into LCD digit.
  */
 exports.createConvertNumber = function(digitsOf, createDigit) {
 
