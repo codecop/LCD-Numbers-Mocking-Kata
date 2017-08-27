@@ -1,9 +1,10 @@
-const
-chai = require('chai');
-const
-should = chai.should();
-// const expect = chai.expect;
-// const assert = chai.assert;
+/* globals describe, it */
+'use strict';
+
+var chai = require('chai');
+var should = chai.should();
+// var expect = chai.expect;
+// var assert = chai.assert;
 
 function hello() {
     return "hello world";

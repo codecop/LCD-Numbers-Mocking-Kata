@@ -31,7 +31,7 @@ function Digit(digit, patternsOf) {
         }
 
         return new Digit(digit, patternOfScaledLines);
-    }
+    };
 
     this.toString = function() {
         return '' + digit;
