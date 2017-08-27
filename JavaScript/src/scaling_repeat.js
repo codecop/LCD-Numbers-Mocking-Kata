@@ -11,7 +11,7 @@ exports.scalingRepeat = function(element, scaling) {
 
     var elements = [];
     scaling.times(function() {
-        elements.push(element)
+        elements.push(element);
     });
 
     if (typeof element === 'string' || element instanceof String) {

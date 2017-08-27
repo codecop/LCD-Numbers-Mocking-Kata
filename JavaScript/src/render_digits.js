@@ -19,16 +19,16 @@ exports.createRenderDigits = function(zip) {
         return digits.map(linesOfDigigit);
     }
 
-    function doZip(linesOfAllDigits) {
-        return zip(linesOfAllDigits, concat);
-    }
-
     function concat(lines) {
         return lines.map(function(line) {
             return line.toString();
         }).reduce(function(a, b) {
             return a + b;
         });
+    }
+
+    function doZip(linesOfAllDigits) {
+        return zip(linesOfAllDigits, concat);
     }
 
     function join(lines) {

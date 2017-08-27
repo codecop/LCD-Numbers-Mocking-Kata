@@ -12,16 +12,16 @@ function Scaling(times) {
 
     this.none = function() {
         return times === 1;
-    }
+    };
 
     this.times = function(block) {
         var i;
         // TODO Objects.requireNonNull(block);
 
-        for (i = 0; i < times; i++) {
+        for (i = 0; i < times; i+=1) {
             block();
         }
-    }
+    };
 
     this.toString = function() {
         return '' + times;

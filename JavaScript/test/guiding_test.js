@@ -1,4 +1,4 @@
-/* globals describe, it, beforeEach, to_lcd */
+/* globals describe, it, beforeEach, Scaling */
 'use strict';
 
 var chai = require('chai');
