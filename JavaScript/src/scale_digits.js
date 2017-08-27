@@ -26,7 +26,7 @@ exports.createScaleDigits = function(scalingRepeat) {
             if (oddLine) {
                 scaled.push(scaledLine);
             } else {
-                scaled += scalingRepeat(scaledLine, scaling);
+                Array.prototype.push.apply(scaled, scalingRepeat(scaledLine, scaling));
             }
             oddLine = !oddLine;
         });
