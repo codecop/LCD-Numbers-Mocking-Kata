@@ -8,6 +8,7 @@ var NEWLINE = "\n";
  * Appends digits' lines next to each other and adds line breaks.
  */
 exports.createRenderDigits = function(zip) {
+    'use strict';
 
     // TODO Objects.requireNonNull(zip);
 
@@ -40,8 +41,8 @@ exports.createRenderDigits = function(zip) {
     return function(digits) {
         // TODO Objects.requireNonNull(digits);
 
-        var allLines = linesOfAllDigits(digits);
-        var linesSideBySide = doZip(allLines);
+        var allLines = linesOfAllDigits(digits),
+            linesSideBySide = doZip(allLines);
         return join(linesSideBySide);
     };
 

@@ -6,6 +6,8 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
  * Repeats objects and characters according to scaling.
  */
 exports.scalingRepeat = function(element, scaling) {
+    'use strict';
+
     // TODO Objects.requireNonNull(element);
     // TODO Objects.requireNonNull(scaling);
 
@@ -16,7 +18,7 @@ exports.scalingRepeat = function(element, scaling) {
 
     if (typeof element === 'string' || element instanceof String) {
         return elements.join('');
-    } else {
-        return elements;
     }
+
+    return elements;
 };

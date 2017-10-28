@@ -6,6 +6,7 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
  * Splits a number into its digits according to its base, e.g. Decimal System.
  */
 exports.createDigitsOf = function() {
+    'use strict';
 
     var base = 10;
     // if (base < 2) {
@@ -17,9 +18,8 @@ exports.createDigitsOf = function() {
             throw new RangeError('negative number ' + value);
         }
 
-        var digits = [];
-
-        var remainder = value;
+        var digits = [],
+            remainder = value;
         while (remainder > 0) {
             digits.push(remainder % base);
             remainder = Math.floor(remainder / base);

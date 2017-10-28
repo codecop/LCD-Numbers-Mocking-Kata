@@ -13,8 +13,8 @@ var right = 'c';
 var replaced = 'bb';
 
 describe('Line', function() {
-    var scaling; // fake object
-    var repeat; // stub function
+    var scaling, // fake object
+        repeat; // stub function
 
     beforeEach(function() {
         scaling = {};
@@ -23,8 +23,8 @@ describe('Line', function() {
     it('should scale middle character horizontally', function() {
         repeat = sinon.stub().withArgs(middle, scaling).returns(replaced);
 
-        var line = new Line(left + middle + right);
-        var scaledLine = line.scaleHorizontal(repeat, scaling);
+        var line = new Line(left + middle + right),
+            scaledLine = line.scaleHorizontal(repeat, scaling);
 
         scaledLine.toString().should.equal(left + replaced + right);
     });

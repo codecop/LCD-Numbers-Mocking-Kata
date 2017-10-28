@@ -6,6 +6,7 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
  * Value object of an LCD digit.
  */
 function Digit(digit, patternsOf) {
+    'use strict';
 
     // TODO Objects.requireNonNull(digit);
     // TODO Objects.requireNonNull(patternsOf);
@@ -20,8 +21,8 @@ function Digit(digit, patternsOf) {
     this.scale = function(scaledLines) {
         // TODO Objects.requireNonNull(scaledLines);
 
-        var linesCount = lines.length;
-        var scaledCount = scaledLines.length;
+        var linesCount = lines.length,
+            scaledCount = scaledLines.length;
         if (scaledCount < linesCount) {
             throw new RangeError('Scaled lines must be more than original ones: ' + scaledCount + '>=' + linesCount);
         }

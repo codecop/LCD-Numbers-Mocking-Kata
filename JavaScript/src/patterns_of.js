@@ -8,6 +8,8 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
 var lcdByDigit = [];
 
 function put(digit, lines) {
+    'use strict';
+
     if (lcdByDigit[digit] !== undefined) {
         throw new RangeError('duplicate pattern definition for digit ' + digit);
     }
@@ -67,6 +69,8 @@ put(9, [new Line(' - '), //
         new Line(' - ')]);
 
 exports.patternsOf = function(digit) {
+    'use strict';
+
     if (lcdByDigit[digit] === undefined) {
         throw new RangeError('no pattern defined for digit ' + digit);
     }
