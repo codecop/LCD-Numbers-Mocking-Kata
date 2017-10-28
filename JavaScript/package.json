@@ -2,6 +2,7 @@
   "name": "lcd-numbers-mocking",
   "description": "LCD Numbers Mocking Collaborators",
   "version": "1.0.0",
+  "main": "src/index.js",
   "repository": {
     "type": "hg",
     "url": "https://bitbucket.org/pkofler/lcd-numbers-mocking-js-setup"
