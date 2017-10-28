@@ -6,6 +6,7 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
  * Splits number into digits and converts each digit into LCD digit.
  */
 exports.createConvertNumber = function(digitsOf, createDigit) {
+    'use strict';
 
     // TODO Objects.requireNonNull(digitsOf);
     // TODO Objects.requireNonNull(createDigit);

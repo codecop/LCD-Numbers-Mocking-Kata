@@ -6,7 +6,8 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
  * Value Object of an LCD digit line.
  */
 function Line(line) {
-    
+    'use strict';
+
     // TODO Objects.requireNonNull(line);
 
     this.scaleHorizontal = function(repeat, scaling) {

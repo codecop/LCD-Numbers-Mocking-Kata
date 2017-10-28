@@ -6,6 +6,7 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
  * Scales x and y of digit lines.
  */
 exports.createScaleDigits = function(scalingRepeat) {
+    'use strict';
 
     // TODO Objects.requireNonNull(scalingRepeat);
 
@@ -17,10 +18,8 @@ exports.createScaleDigits = function(scalingRepeat) {
             return digit;
         }
 
-        var scaled = [];
-
-        var oddLine = true;
-        var line;
+        var scaled = [],
+            oddLine = true;
         digit.lines().forEach(function(line) {
             var scaledLine = line.scaleHorizontal(scalingRepeat, scaling);
             if (oddLine) {

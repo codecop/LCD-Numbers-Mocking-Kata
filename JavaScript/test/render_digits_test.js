@@ -27,11 +27,11 @@ describe('renderDigits', function() {
 
     it('should render digits side by side', function() {
         var one = digitFrom('A1', //
-                            'A2');
-        var two = digitFrom('B1', //
-                            'B2');
+                            'A2'),
+            two = digitFrom('B1', //
+                            'B2'),
 
-        var display = printDigit([ one, two ]);
+            display = printDigit([ one, two ]);
 
         display.should.equal('A1B1\n' + //
                              'A2B2\n');

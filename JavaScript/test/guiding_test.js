@@ -72,8 +72,8 @@ describe('to_lcd', function() {
     });
 
     it('should print all numbers LCD size three', function() {
-        var lcd = toLcd(1234567890, Scaling.of(3));
-        var expected = read('/numbers grid 5x9 - size 3.txt');
+        var lcd = toLcd(1234567890, Scaling.of(3)),
+            expected = read('/numbers grid 5x9 - size 3.txt');
         lcd.should.equal(expected);
     });
 

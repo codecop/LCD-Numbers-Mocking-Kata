@@ -6,6 +6,7 @@ exports = typeof window !== 'undefined' && window !== null ? window : global;
  * Creates an (LCD) digit from its pattern.
  */
 exports.createCreateDigit = function(patternsOf) {
+    'use strict';
 
     // TODO Objects.requireNonNull(patternsOf);
 

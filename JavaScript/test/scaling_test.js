@@ -21,8 +21,8 @@ describe('Scaling', function() {
     });
 
     it('should scale according factor', function() {
-        var factor = 3;
-        var threeTimes = Scaling.of(factor);
+        var factor = 3,
+            threeTimes = Scaling.of(factor);
 
         threeTimes.times(callback);
 
