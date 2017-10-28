@@ -1,0 +1,80 @@
+## Creating Tests for LCD Numbers Kata by Mocking Collaborators ##
+
+This is an implementation of the [LCD Numbers Kata](http://rubyquiz.com/quiz14.html)
+in JavaScript using outside-in development. There are no tests. In order to unit test it
+you need to create [test doubles](http://martinfowler.com/bliki/TestDouble.html)
+for the collaborators.
+
+This is a [npm](https://www.npmjs.com/) project. Run `npm test` to
+run your tests. [Mocha](https://mochajs.org/) and [Sinon.JS](http://sinonjs.org/)
+are provided as dependencies.
+
+## Requirements (copied from Ruby Quiz) ##
+
+The `toLcd` creates an LCD string representation of an integer value using a
+4x7 grid of space each, using minus and pipe characters for each digit.
+Each digit is shown below:
+
+     --      --  --      --  --  --  --  --
+    |  |   |   |   ||  ||   |      ||  ||  |
+    |  |   |   |   ||  ||   |      ||  ||  |
+             --  --  --  --  --      --  --
+    |  |   ||      |   |   ||  |   ||  |   |
+    |  |   ||      |   |   ||  |   ||  |   |
+     --      --  --      --  --      --  --
+
+The bar size should be adjustable. The default value is 2 - as shown above.
+Read more about it at [RubyQuiz](http://rubyquiz.com/quiz14.html).
+
+## Description of Existing Solution ##
+
+To make things easier for you, here is the description of the solution used in the code:
+The function `toLcd` is the entry point. The given number is split into digits by
+`digitsOf` (which uses the Decimal System in our case). Then the initial `Digit`s are
+created in `pattersOf` by copying the template `Line`s. Then the (LCD) digits are scaled
+in `scaleDigits` according to the `Scaling` value. The actual scaling is done inside
+the `scalingRepeat` function by repeating certain rows and columns of the template.
+Finally the list of digits is combined to a single String by `renderDigits`.
+
+![UML Diagram](model/toLcd_Call_Diagram.png)
+
+There is a script `index.js` to see the LCD Numbers working. There you can see how all the
+functions are assembled and collaborators are combined with each other.
+You can run it with
+
+    node src/index.js <number, e.g. 123> <size, e.g. 2>
+
+## Creating Unit Tests ##
+
+Create unit tests for all classes and functions. Make sure all units are tested in isolation.
+The point of this exercise is to go extreme to practise using test doubles.
+**Create test doubles for everything!** Create dummy objects for all used values
+and stub all collaborators, even the simple values `Scaling` and `Line`.
+
+1. Start testing the simple units like `Scaling`, `Line` and `Digit`.
+   These classes have a single (interesting) method with a single collaborator.
+1. Work on `scaleDigits` and `renderDigits`. Both have more logic, but still only
+   a single collaborator.
+1. Things are getting more complicated with `convertNumber`.
+1. Finally go for `toLcd` which has three collaborators.
+
+There are sample LCD outputs in the `test/resources` folder to be used in tests.
+The `size_1`, `size_2` and `size_3` folders contain each digit in original size and
+scaled twice and three times.
+
+### Check your Coverage ###
+To measure your progress you should use code coverage tools:
+
+* [Istanbul](https://istanbul.js.org/) - run `coverage.bat` or `./coverage.sh`.
+
+* [Stryker](https://stryker-mutator.github.io/) - run `stryker.bat` or `./stryker.sh`.
+
+### Warning ###
+Enforcing all calls to other functions in a test is not recommended in real unit tests
+because this leads to bad tests which are bound to the implementation. These
+over specified tests make it impossible to change the code under test without breaking.
+We want to be able to change the code without breaking the test as long as the
+required functionality is not changed. This exercise is for practising test doubles.
+
+### License ###
+This work is licensed under a [New BSD License](http://opensource.org/licenses/bsd-license.php), see `license txt` in repository.
