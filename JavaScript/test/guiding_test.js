@@ -31,9 +31,9 @@ describe('to_lcd', function() {
     beforeEach(function() {
         toLcd = createToLcd( //
             // new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
-            createConvertNumber(createDigitsOf(), createCreateDigit(patternsOf)), //
+            createConvertNumber(createDigitsOf(10), createCreateDigit(patternsOf)), //
             // new DigitScaler(new ScalingRepeater()), //
-            createScaleDigits(scalingRepeat),
+            createScaleDigits(scalingRepeat), //
             // new DigitPrinter(new Zipper()));
             createRenderDigits(zipWithCombine));
     });
