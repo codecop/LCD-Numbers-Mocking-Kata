@@ -1,7 +1,5 @@
 'use strict';
 
-// Java class Main
-
 require('./to_lcd');
 require('./convert_number');
 require('./digits_of');
@@ -16,17 +14,13 @@ require('./zip_with_combine');
 require('./scaling');
 
 /**
- * Fake client code. Run this script to see LCD Numbers working:
+ * Client code. Run this script to see LCD Numbers working:
  * <code>node index.js 12345 2</code>.
  */
 var toLcd = createToLcd( //
-    // new DigitsSplitter(new NumeralSystem(), new DigitFactory(new Patterns())), //
-    createConvertNumber(createDigitsOf(), createCreateDigit(patternsOf)), //
-    // new DigitScaler(new ScalingRepeater()), //
-    createScaleDigits(scalingRepeat),
-    // new DigitPrinter(new Zipper()));
+    createConvertNumber(createDigitsOf(10), createCreateDigit(patternsOf)), //
+    createScaleDigits(scalingRepeat), //
     createRenderDigits(zipWithCombine));
-
 
 if (require.main === module) {
 

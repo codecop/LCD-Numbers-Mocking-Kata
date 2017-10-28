@@ -1,25 +1,18 @@
 exports = typeof window !== 'undefined' && window !== null ? window : global;
 
-// Java class Digit
-
 /**
  * Value object of an LCD digit.
  */
 function Digit(digit, patternsOf) {
     'use strict';
 
-    // TODO Objects.requireNonNull(digit);
-    // TODO Objects.requireNonNull(patternsOf);
-
     var lines = patternsOf(digit);
-    // TODO Objects.requireNonNull(lines);
 
     this.lines = function() {
         return lines;
     };
 
     this.scale = function(scaledLines) {
-        // TODO Objects.requireNonNull(scaledLines);
 
         var linesCount = lines.length,
             scaledCount = scaledLines.length;

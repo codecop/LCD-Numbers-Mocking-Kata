@@ -1,18 +1,13 @@
 exports = typeof window !== 'undefined' && window !== null ? window : global;
 
-// Java class DigitScaler
-
 /**
- * Scales x and y of digit lines.
+ * Returns a function that
+ * scales x and y of digit lines.
  */
 exports.createScaleDigits = function(scalingRepeat) {
     'use strict';
 
-    // TODO Objects.requireNonNull(scalingRepeat);
-
     function scale(digit, scaling) {
-        // TODO Objects.requireNonNull(digit);
-        // TODO Objects.requireNonNull(scaling);
 
         if (scaling.none()) {
             return digit;
@@ -34,8 +29,6 @@ exports.createScaleDigits = function(scalingRepeat) {
     }
 
     return function(digits, scaling) {
-        // TODO Objects.requireNonNull(digits);
-        // TODO Objects.requireNonNull(scaling);
 
         function scaleDigit(digit) {
             return scale(digit, scaling);
