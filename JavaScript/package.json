@@ -17,7 +17,11 @@
     "sinon": "3.2.1",
     "istanbul": "0.4.5",
     "jslint": "0.10.3",
-    "jshint": "2.9.4"
+    "jshint": "2.9.4",
+    "stryker": "0.13.0",
+    "stryker-api": "0.11.0",
+    "stryker-mocha-framework": "0.6.1",
+    "stryker-mocha-runner": "0.9.1"
   },
   "scripts": {
     "test": "mocha"
