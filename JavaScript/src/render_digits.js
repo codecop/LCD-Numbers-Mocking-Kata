@@ -1,16 +1,13 @@
 exports = typeof window !== 'undefined' && window !== null ? window : global;
 
-// Java class DigitPrinter
-
 var NEWLINE = "\n";
 
 /**
- * Appends digits' lines next to each other and adds line breaks.
+ * Returns a function that
+ * appends digits' lines next to each other and adds line breaks.
  */
 exports.createRenderDigits = function(zip) {
     'use strict';
-
-    // TODO Objects.requireNonNull(zip);
 
     function linesOfDigigit(digit) {
         return digit.lines();
@@ -39,8 +36,6 @@ exports.createRenderDigits = function(zip) {
     }
 
     return function(digits) {
-        // TODO Objects.requireNonNull(digits);
-
         var allLines = linesOfAllDigits(digits),
             linesSideBySide = doZip(allLines);
         return join(linesSideBySide);

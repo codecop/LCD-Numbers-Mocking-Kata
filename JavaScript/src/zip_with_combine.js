@@ -1,7 +1,5 @@
 exports = typeof window !== 'undefined' && window !== null ? window : global;
 
-// Java class Zipper
-
 function zip(arrays) {
     'use strict';
     // see https://stackoverflow.com/a/10284006/104143
@@ -17,9 +15,6 @@ function zip(arrays) {
  */
 exports.zipWithCombine = function(collections, combine) {
     'use strict';
-
-    // TODO Objects.requireNonNull(collections);
-    // TODO Objects.requireNonNull(combine);
 
     if (collections.length === 0) {
         return [];

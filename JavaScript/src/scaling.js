@@ -1,7 +1,5 @@
 exports = typeof window !== 'undefined' && window !== null ? window : global;
 
-// Java class Scaling
-
 /**
  * The scale factor value.
  */
@@ -18,7 +16,6 @@ function Scaling(times) {
 
     this.times = function(block) {
         var i;
-        // TODO Objects.requireNonNull(block);
 
         for (i = 0; i < times; i+=1) {
             block();

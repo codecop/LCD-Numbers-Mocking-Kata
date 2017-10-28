@@ -1,9 +1,7 @@
 exports = typeof window !== 'undefined' && window !== null ? window : global;
 
-// Java class Patterns
-
 /**
- * Knows the initial pattern of each LCD digit.
+ * Initial pattern of each LCD digit.
  */
 var lcdByDigit = [];
 
