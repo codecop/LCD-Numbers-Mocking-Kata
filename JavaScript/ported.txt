@@ -1,0 +1,15 @@
+ported from Java
+----------------
+* Digit           > Digit (digit.js)
+* DigitFactory    > create_digit.js
+* DigitPrinter    > render_digits
+* DigitScaler     > scale_digits
+* DigitsSplitter  > convert_number.js
+* LcdDisplay      > to_lcd
+* Line            > Line (line.js)
+* Main            > index.js
+* NumeralSystem   > digits_of
+* Patterns        > patters_of
+* Scaling         > Scaling
+* ScalingRepeater > scaling_repeat
+* Zipper          > zip_with_combine
