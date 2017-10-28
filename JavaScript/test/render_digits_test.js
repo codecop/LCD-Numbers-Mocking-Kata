@@ -21,7 +21,7 @@ describe('renderDigits', function() {
     var printDigit;
 
     beforeEach(function() {
-        // Zip feels technical, so it is rather a helper than a real collaborator.
+        // zipWithCombine feels technical, so it is rather a helper than a real collaborator.
         printDigit = createRenderDigits(zipWithCombine);
     });
 
