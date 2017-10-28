@@ -22,7 +22,7 @@ require('../src/zip_with_combine');
 require('../src/scaling');
 
 function read(name) {
-    return fs.readFileSync('./test/resources/' + name, 'UTF-8').replace(/(?:\r\n|\r)/g, '\n');
+    return fs.readFileSync(__dirname + '/resources/' + name, 'UTF-8').replace(/(?:\r\n|\r)/g, '\n');
 }
 
 describe('to_lcd', function() {
