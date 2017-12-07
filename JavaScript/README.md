@@ -9,6 +9,11 @@ This is a [npm](https://www.npmjs.com/) project. Run `npm test` to
 run your tests. [Mocha](https://mochajs.org/) and [Sinon.JS](http://sinonjs.org/)
 are provided as dependencies.
 
+For other languages see
+
+* [C# with xUnit.net and MOQ](https://bitbucket.org/pkofler/lcd-numbers-mocking-csharp-setup)
+* [Java with JUnit and Mockito](https://bitbucket.org/pkofler/lcd-numbers-mocking-java-setup)
+
 ## Requirements (copied from Ruby Quiz) ##
 
 The `toLcd` creates an LCD string representation of an integer value using a
