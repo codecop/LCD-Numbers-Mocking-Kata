@@ -11,6 +11,11 @@ with `dotnet restore` and `dotnet run`. It is set up to work with Visual Studio 
 [xUnit.net](https://xunit.github.io/) and [MOQ](http://www.moqthis.com/)
 are provided as dependencies.
 
+For other languages see
+
+* [Java with JUnit and Mockito](https://bitbucket.org/pkofler/lcd-numbers-mocking-java-setup)
+* [JavaScript with Mocha and Sinon.JS](https://bitbucket.org/pkofler/lcd-numbers-mocking-js-setup)
+
 ## Requirements (copied from Ruby Quiz) ##
 
 The `LcdDisplay` creates an LCD string representation of an integer value using a
