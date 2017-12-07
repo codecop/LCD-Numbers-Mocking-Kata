@@ -9,6 +9,11 @@ This is an [Apache Maven](https://maven.apache.org/) project. Run `mvnw test` to
 run your tests. [JUnit](http://junit.org/) and [Mockito](http://site.mockito.org/)
 are provided as dependencies.
 
+For other languages see
+
+* [C# with xUnit.net and MOQ](https://bitbucket.org/pkofler/lcd-numbers-mocking-csharp-setup)
+* [JavaScript with Mocha and Sinon.JS](https://bitbucket.org/pkofler/lcd-numbers-mocking-js-setup)
+
 ## Requirements (copied from Ruby Quiz) ##
 
 The `LcdDisplay` creates an LCD string representation of an integer value using a
