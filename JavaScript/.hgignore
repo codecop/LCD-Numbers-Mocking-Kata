@@ -14,5 +14,3 @@ coverage
 .idea
 *.iml
 *.iwr
-
-test/resources/size_*
