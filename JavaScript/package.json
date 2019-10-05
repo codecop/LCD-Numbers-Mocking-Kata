@@ -1,0 +1,29 @@
+{
+  "name": "lcd-numbers-mocking",
+  "description": "LCD Numbers Mocking Collaborators",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "hg",
+    "url": "https://bitbucket.org/pkofler/lcd-numbers-mocking-js-setup"
+  },
+  "author": "Peter 'Code Cop' Kofler",
+  "license": "BSD-3-Clause",
+  "readmeFilename": "README.md",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "3.2.0",
+    "chai": "3.5.0",
+    "sinon": "3.2.1",
+    "istanbul": "0.4.5",
+    "jslint": "0.10.3",
+    "jshint": "2.9.4",
+    "stryker": "0.13.0",
+    "stryker-api": "0.11.0",
+    "stryker-mocha-framework": "0.6.1",
+    "stryker-mocha-runner": "0.9.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
