@@ -1,11 +1,11 @@
 {
-  "name": "lcd-numbers-mocking",
+  "name": "lcd-numbers-mocking-kata",
   "description": "LCD Numbers Mocking Collaborators",
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": {
-    "type": "hg",
-    "url": "https://bitbucket.org/pkofler/lcd-numbers-mocking-js-setup"
+    "type": "git",
+    "url": "https://github.com/codecop/LCD-Numbers-Mocking-Kata"
   },
   "author": "Peter 'Code Cop' Kofler",
   "license": "BSD-3-Clause",

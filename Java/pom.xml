@@ -4,21 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.codecop</groupId>
-    <artifactId>lcd-numbers-mocking</artifactId>
+    <artifactId>lcd-numbers-mocking-kata</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>LCD Numbers Mocking Collaborators</name>
     <description>LCD Numbers Kata without tests to practice mocking the collaborators.</description>
-    <url>https://bitbucket.org/pkofler/${project.artifactId}/</url>
+    <url>https://github.com/codecop/LCD-Numbers-Mocking-Kata</url>
     <inceptionYear>2016</inceptionYear>
 
-    <scm>
-        <connection>scm:hg:https://bitbucket.org/pkofler/${project.artifactId}</connection>
-        <developerConnection>scm:hg:https://bitbucket.org/pkofler/${project.artifactId}</developerConnection>
-        <url>https://bitbucket.org/pkofler/${project.artifactId}/src</url>
-    </scm>
-
     <build>
-        <finalName>LCDNumbersMockingSetup_Eclipse</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
