@@ -1,4 +1,4 @@
-## Creating Tests for LCD Numbers Kata by Mocking Collaborators
+# Creating Tests for LCD Numbers Kata by Mocking Collaborators
 
 This is an implementation of the [LCD Numbers Kata](http://rubyquiz.com/quiz14.html)
 in JavaScript using outside-in development. There are no tests. In order to unit test it
@@ -77,7 +77,3 @@ because this leads to bad tests which are bound to the implementation. These
 over specified tests make it impossible to change the code under test without breaking.
 We want to be able to change the code without breaking the test as long as the
 required functionality is not changed. This exercise is for practising test doubles.
-
-### License
-
-This work is licensed under a [New BSD License](http://opensource.org/licenses/bsd-license.php), see `license txt` in repository.
