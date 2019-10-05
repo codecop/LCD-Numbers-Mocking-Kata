@@ -1,5 +1,3 @@
-syntax: glob
-
 # User-specific files
 *.suo
 *.user
