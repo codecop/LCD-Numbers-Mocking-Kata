@@ -1,0 +1,22 @@
+{
+    "name": "codecop/lcd-numbers-mocking-kata",
+    "description": "LCD Numbers Mocking Collaborators",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Peter Kofler",
+            "email": "peter.kofler@code-cop.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LcdNumbers\\": "src\/LcdNumbers\/"
+        }
+    },
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.8.*",
+        "mockery/mockery": "0.9.*"
+    }
+}
