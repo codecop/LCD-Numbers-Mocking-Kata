@@ -9,9 +9,9 @@ class Line
 
     private $line;
 
-    public function __construct(string $line)
+    public function __construct($line)
     {
-        $this->line = line;
+        $this->line = $line;
     }
 
     public function scaleHorizontal(ScalingRepeater $repeater, Scaling $scaling)
