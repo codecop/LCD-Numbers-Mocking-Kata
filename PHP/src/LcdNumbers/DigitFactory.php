@@ -16,6 +16,6 @@ class DigitFactory
 
     public function create($digit)
     {
-        return new Digit($digit, $this->patterns);
+        return Digit::from($digit, $this->patterns);
     }
 }

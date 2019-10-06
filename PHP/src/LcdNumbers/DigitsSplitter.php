@@ -20,9 +20,10 @@ class DigitsSplitter
     {
         $numeralDigits = $this->numeralSystem->digitsOf($number);
 
-        // TODO make it work
-        return $numeralDigits->stream()->//
-            map(digitFactory::create)->//
-            collect();
+        $digits = [];
+        foreach ($numeralDigits as $digit) {
+            array_push($digits, $this->digitFactory->create($digit));
+        }
+        return $digits;
     }
 }

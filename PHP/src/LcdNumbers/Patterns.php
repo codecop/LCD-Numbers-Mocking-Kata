@@ -66,18 +66,17 @@ class Patterns
 
     private function put($digit, $lines)
     {
-        if ($this->lcdByDigit->containsKey($digit)) {
-            throw new IllegalArgumentException("duplicate pattern definition for digit " . digit);
+        if (array_key_exists($digit, $this->lcdByDigit)) {
+            throw new InvalidArgumentException("duplicate pattern definition for digit " . $digit);
         }
 
-        $listOfLines = $lines->copy();
-        $this->lcdByDigit[$digit] = $listOfLines;
+        $this->lcdByDigit[$digit] = $lines;
     }
 
     public function of($digit)
     {
-        if (!$this->lcdByDigit->containsKey($digit)) {
-            throw new IllegalArgumentException("no pattern defined for digit " . digit);
+        if (!array_key_exists($digit, $this->lcdByDigit)) {
+            throw new InvalidArgumentException("no pattern defined for digit " . $digit);
         }
 
         return $this->lcdByDigit[digit];

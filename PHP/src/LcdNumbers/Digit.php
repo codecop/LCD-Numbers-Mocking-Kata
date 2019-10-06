@@ -10,10 +10,15 @@ class Digit
     private $digit;
     private $lines;
 
-    public function __construct($digit, Patterns $patterns)
+    public static function from($digit, Patterns $patterns)
+    {
+        return new Digit($digit, $patterns->of($digit));
+    }
+
+    private function __construct($digit, $lines)
     {
         $this->digit = $digit;
-        $this->lines = $patterns->of($digit);
+        $this->lines = $lines;
     }
 
     public function lines()
@@ -23,10 +28,10 @@ class Digit
 
     public function scale(array $scaledLines)
     {
-        $linesCount = $this->lines->size();
-        $scaledCount = $scaledLines->size();
+        $linesCount = count($this->lines);
+        $scaledCount = count($scaledLines);
         if ($scaledCount < $linesCount) {
-            throw new IllegalArgumentException("Scaled lines must be more than original ones: " . scaledCount . ">=" . linesCount);
+            throw new InvalidArgumentException("Scaled lines must be more than original ones: " . scaledCount . ">=" . linesCount);
         }
 
         return new Digit($this->digit, $scaledLines);

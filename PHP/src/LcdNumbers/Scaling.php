@@ -7,8 +7,8 @@ namespace LcdNumbers;
 class Scaling
 {
 
-    //public static Scaling NONE = new Scaling(1);
-    //public static Scaling TWO = new Scaling(2);
+    public static $NONE;
+    public static $TWO;
 
     private $times;
 
@@ -17,10 +17,10 @@ class Scaling
         return new Scaling($t);
     }
 
-    private function __($times)
+    private function __construct($times)
     {
         if ($times <= 0) {
-            throw new IllegalArgumentException("scaling factor must be >= 1");
+            throw new InvalidArgumentException("scaling factor must be >= 1");
         }
 
         $this->times = $times;
@@ -43,3 +43,6 @@ class Scaling
         return (string) $this->times;
     }
 }
+
+Scaling::$NONE = new Scaling(1);
+Scaling::$TWO = new Scaling(2);

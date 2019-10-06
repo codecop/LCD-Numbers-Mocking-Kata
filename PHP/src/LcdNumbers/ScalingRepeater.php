@@ -7,17 +7,21 @@ namespace LcdNumbers;
 class ScalingRepeater
 {
 
-    public function repeatElement($element, Scaling $scaling)
+    public function repeat($element, Scaling $scaling)
     {
         $elements = [];
-        $scaling->times(function () use ($elements, $element) {$elements->add($element);});
+        $scaling->times(function () use ($elements, $element) {
+            array_push($elements, $element);
+        });
         return $elements;
     }
 
     public function repeatCharacter($aChar, Scaling $scaling)
     {
-        $acc = "";
-        $scaling->times(function () use ($acc, $aChar) {$acc .= $aChar;});
-        return $acc;
+        $result = "";
+        $scaling->times(function () use ($result, $aChar) {
+            $result .= $aChar;
+        });
+        return $result;
     }
 }

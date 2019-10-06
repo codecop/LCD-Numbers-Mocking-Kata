@@ -16,8 +16,7 @@ class Line
 
     public function scaleHorizontal(ScalingRepeater $repeater, Scaling $scaling)
     {
-        $chars = $this->line->toCharArray();
-        return new Line($chars[0] + $repeater->repeat($chars[1], $scaling) + $chars[2]);
+        return new Line($this->line[0] . $repeater->repeatCharacter($this->line[1], $scaling) . $this->line[2]);
     }
 
     public function __toString()
