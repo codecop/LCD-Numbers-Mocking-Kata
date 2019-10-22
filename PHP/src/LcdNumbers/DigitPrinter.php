@@ -41,7 +41,7 @@ class DigitPrinter
 
     private function concat(array $lines)
     {
-        return joinNewLine(
+        return $this->joinNewLine(
             $lines
             //    array_map(function($line) { return (string) $line; }, $lines)
         );
@@ -49,7 +49,7 @@ class DigitPrinter
 
     private function joinNewLine(array $lines)
     {
-        return join(NEWLINE, $lines) . NEWLINE;
+        return join(self::NEWLINE, $lines) . self::NEWLINE;
     }
 
 }

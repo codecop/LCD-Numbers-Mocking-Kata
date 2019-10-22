@@ -13,20 +13,20 @@ class Zipper
 
         $iterators = array_map(
             function ($collection) {
-                $obj = new ArrayObject($collection);
+                $obj = new \ArrayObject($collection);
                 return $obj->getIterator();
             },
             $collections);
 
-        if ($iterators->isEmpty()) {
+        if (empty($iterators)) {
             return $zipped;
         }
 
         $first = $iterators[0];
         while ($first->valid()) {
-            $nthElements = nextOfEach($iterators);
-            $joined = $combine->combine($nthElements);
-            $zipped->add($joined);
+            $nthElements = $this->nextOfEach($iterators);
+            $joined = $combine($nthElements);
+            $zipped[] = $joined;
         }
 
         return $zipped;
@@ -36,7 +36,7 @@ class Zipper
     {
         $nthElements = [];
         foreach ($iterators as $i) {
-            $nthElements->add($i->current());
+            $nthElements[] = $i->current();
         }
         return $nthElements;
     }
