@@ -12,7 +12,7 @@ class NumeralSystem
     public function __construct($base = 10)
     {
         if ($base < 2) {
-            throw new InvalidArgumentException("Smallest base is binary; base=" . $base);
+            throw new \InvalidArgumentException("Smallest base is binary; base=" . $base);
         }
 
         $this->base = $base;
@@ -21,7 +21,7 @@ class NumeralSystem
     public function digitsOf($value)
     {
         if ($value < 0) {
-            throw new InvalidArgumentException("negative number " . $value);
+            throw new \InvalidArgumentException("negative number " . $value);
         }
 
         $digits = [];

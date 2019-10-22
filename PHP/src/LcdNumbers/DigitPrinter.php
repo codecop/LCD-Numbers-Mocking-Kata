@@ -26,25 +26,28 @@ class DigitPrinter
     private function linesOfAllDigits(array $digits)
     {
         return array_map(
-            function ($digit) {
-                return $digit->lines();
-            }, $digits);
+            function ($digit) {return $digit->lines();},
+            $digits
+        );
     }
 
     private function zip(array $linesOfAllDigits)
     {
-        return $this->zipper->zip($linesOfAllDigits, this::concat);
+        return $this->zipper->zip(
+            $linesOfAllDigits,
+            function ($lines) {return $this->concat($lines);}
+        );
     }
 
     private function concat(array $lines)
     {
-        return join(
+        return joinNewLine(
             $lines
             //    array_map(function($line) { return (string) $line; }, $lines)
         );
     }
 
-    private function join(array $lines)
+    private function joinNewLine(array $lines)
     {
         return join(NEWLINE, $lines) . NEWLINE;
     }

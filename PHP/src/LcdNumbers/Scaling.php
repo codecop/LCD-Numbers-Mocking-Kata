@@ -20,7 +20,7 @@ class Scaling
     private function __construct($times)
     {
         if ($times <= 0) {
-            throw new InvalidArgumentException("scaling factor must be >= 1");
+            throw new \InvalidArgumentException("scaling factor must be >= 1");
         }
 
         $this->times = $times;
@@ -44,5 +44,5 @@ class Scaling
     }
 }
 
-Scaling::$NONE = new Scaling(1);
-Scaling::$TWO = new Scaling(2);
+Scaling::$NONE = Scaling::of(1);
+Scaling::$TWO = Scaling::of(2);

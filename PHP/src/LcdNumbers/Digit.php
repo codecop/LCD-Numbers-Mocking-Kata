@@ -31,7 +31,7 @@ class Digit
         $linesCount = count($this->lines);
         $scaledCount = count($scaledLines);
         if ($scaledCount < $linesCount) {
-            throw new InvalidArgumentException("Scaled lines must be more than original ones: " . scaledCount . ">=" . linesCount);
+            throw new \InvalidArgumentException("Scaled lines must be more than original ones: " . $scaledCount . ">=" . $linesCount);
         }
 
         return new Digit($this->digit, $scaledLines);

@@ -67,7 +67,7 @@ class Patterns
     private function put($digit, $lines)
     {
         if (array_key_exists($digit, $this->lcdByDigit)) {
-            throw new InvalidArgumentException("duplicate pattern definition for digit " . $digit);
+            throw new \InvalidArgumentException("duplicate pattern definition for digit " . $digit);
         }
 
         $this->lcdByDigit[$digit] = $lines;
@@ -76,9 +76,9 @@ class Patterns
     public function of($digit)
     {
         if (!array_key_exists($digit, $this->lcdByDigit)) {
-            throw new InvalidArgumentException("no pattern defined for digit " . $digit);
+            throw new \InvalidArgumentException("no pattern defined for digit " . $digit);
         }
 
-        return $this->lcdByDigit[digit];
+        return $this->lcdByDigit[$digit];
     }
 }
