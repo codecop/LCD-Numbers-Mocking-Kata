@@ -10,7 +10,7 @@ class ScalingRepeater
     public function repeat($element, Scaling $scaling)
     {
         $elements = [];
-        $scaling->times(function () use ($elements, $element) {
+        $scaling->times(function () use (&$elements, $element) {
             array_push($elements, $element);
         });
         return $elements;
@@ -19,8 +19,8 @@ class ScalingRepeater
     public function repeatCharacter($aChar, Scaling $scaling)
     {
         $result = "";
-        $scaling->times(function () use ($result, $aChar) {
-            $result .= $aChar;
+        $scaling->times(function () use (&$result, $aChar) {
+            $result = $result . $aChar;
         });
         return $result;
     }
