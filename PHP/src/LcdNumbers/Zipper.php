@@ -37,6 +37,7 @@ class Zipper
         $nthElements = [];
         foreach ($iterators as $i) {
             $nthElements[] = $i->current();
+            $i->next();
         }
         return $nthElements;
     }
