@@ -64,13 +64,13 @@ class Patterns
             new Line(" - "));
     }
 
-    private function put($digit, $lines)
+    private function put($digit, $line1, $line2, $line3, $line4, $line5)
     {
         if (array_key_exists($digit, $this->lcdByDigit)) {
             throw new \InvalidArgumentException("duplicate pattern definition for digit " . $digit);
         }
 
-        $this->lcdByDigit[$digit] = $lines;
+        $this->lcdByDigit[$digit] = [$line1, $line2, $line3, $line4, $line5];
     }
 
     public function of($digit)
