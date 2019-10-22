@@ -29,7 +29,7 @@ class NumeralSystem
         $remainder = $value;
         while ($remainder > 0) {
             array_push($digits, $remainder % $this->base);
-            $remainder /= $this->base;
+            $remainder = (int) ($remainder / $this->base);
         }
 
         return array_reverse($digits);
