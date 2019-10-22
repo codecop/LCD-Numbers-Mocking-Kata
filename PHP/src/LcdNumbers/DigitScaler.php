@@ -37,7 +37,7 @@ class DigitScaler
             if ($oddLine) {
                 array_push($scaled, $scaledLine);
             } else {
-                array_merge($scaled, $this->repeater->repeat($scaledLine, $scaling));
+                $scaled = array_merge($scaled, $this->repeater->repeat($scaledLine, $scaling));
             }
             $oddLine = !$oddLine;
         }
