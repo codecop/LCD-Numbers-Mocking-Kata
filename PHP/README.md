@@ -64,7 +64,9 @@ scaled twice and three times.
 
 ### Check your Coverage
 
-To measure your progress you should use code coverage tools.
+To measure your progress you should use code coverage tools:
+
+* [PHPUnit Code Coverage Analysis](https://phpunit.de/manual/4.8/en/code-coverage-analysis.html) - type `phpunit --coverage-html coverage`.
 
 ### Warning
 
