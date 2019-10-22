@@ -20,7 +20,7 @@ class DigitPrinter
     {
         $linesOfAllDigits = $this->linesOfAllDigits($digits);
         $linesSideBySide = $this->zip($linesOfAllDigits);
-        return $this->join($linesSideBySide);
+        return $this->joinNewLine($linesSideBySide);
     }
 
     private function linesOfAllDigits(array $digits)
@@ -42,14 +42,13 @@ class DigitPrinter
     private function concat(array $lines)
     {
         return $this->joinNewLine(
-            $lines
-            //    array_map(function($line) { return (string) $line; }, $lines)
+            array_map(function($line) { return (string) $line; }, $lines)
         );
     }
 
     private function joinNewLine(array $lines)
     {
-        return join(self::NEWLINE, $lines) . self::NEWLINE;
+        return implode("", $lines) . self::NEWLINE;
     }
 
 }
