@@ -21,8 +21,8 @@ class DigitsSplitter
         $numeralDigits = $this->numeralSystem->digitsOf($number);
 
         $digits = [];
-        foreach ($numeralDigits as $digit) {
-            array_push($digits, $this->digitFactory->create($digit));
+        foreach ($numeralDigits as $numeralDigit) {
+            array_push($digits, $this->digitFactory->create($numeralDigit));
         }
         return $digits;
     }

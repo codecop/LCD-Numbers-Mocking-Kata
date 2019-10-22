@@ -35,9 +35,9 @@ class Zipper
     private function nextOfEach(array $iterators)
     {
         $nthElements = [];
-        foreach ($iterators as $i) {
-            $nthElements[] = $i->current();
-            $i->next();
+        foreach ($iterators as $iterator) {
+            $nthElements[] = $iterator->current();
+            $iterator->next();
         }
         return $nthElements;
     }

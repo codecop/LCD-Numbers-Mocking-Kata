@@ -26,7 +26,9 @@ class DigitPrinter
     private function linesOfAllDigits(array $digits)
     {
         return array_map(
-            function ($digit) {return $digit->lines();},
+            function ($digit) {
+                return $digit->lines();
+            },
             $digits
         );
     }
@@ -35,15 +37,20 @@ class DigitPrinter
     {
         return $this->zipper->zip(
             $linesOfAllDigits,
-            function ($lines) {return $this->concat($lines);}
+            function ($lines) {
+                return $this->concat($lines);
+            }
         );
     }
 
     private function concat(array $lines)
     {
-        return $this->joinNewLine(
-            array_map(function($line) { return (string) $line; }, $lines)
-        );
+        $strings = array_map(
+            function ($line) {
+                return (string) $line;
+            },
+            $lines);
+        return $this->joinNewLine($strings);
     }
 
     private function joinNewLine(array $lines)
