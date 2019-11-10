@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LcdNumbers", "LcdNumbers\LcdNumbers.xproj", "{7BC9DB74-3CDF-466E-AFE2-F542655D0EEA}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LcdNumberTests", "LcdNumberTests\LcdNumberTests.xproj", "{8131A990-B7D0-499A-9F7D-A96C63159487}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LcdNumbers.Tests", "LcdNumbers.Tests\LcdNumbers.Tests.xproj", "{8131A990-B7D0-499A-9F7D-A96C63159487}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
